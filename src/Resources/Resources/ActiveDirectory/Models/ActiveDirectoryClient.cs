@@ -208,46 +208,11 @@ namespace Microsoft.Azure.Commands.ActiveDirectory
         }
 
         /// <summary>
-        /// The graph getobjectsbyObjectId API supports 1000 objectIds per call.
-        /// Due to this we are batching objectIds by chunk size of 1000 per APi call if it exceeds 1000
+        /// Get object by ObjectId
         /// </summary>
-        public List<PSADObject> GetObjectsByObjectId(List<string> objectIds)
+        public PSADObject GetObjectByObjectId(string objectId)
         {
-            // todo: do we want to use 1000 as batch count in msgraph API?
-            List<PSADObject> result = new List<PSADObject>();
-            IList<Common.MSGraph.Version1_0.DirectoryObjects.Models.MicrosoftGraphDirectoryObject> adObjects;
-            int objectIdBatchCount;
-            const int batchCount = 1000;
-            for (int i = 0; i < objectIds.Count; i += batchCount)
-            {
-                if ((i + batchCount) > objectIds.Count)
-                {
-                    objectIdBatchCount = objectIds.Count - i;
-                }
-                else
-                {
-                    objectIdBatchCount = batchCount;
-                }
-                List<string> objectIdBatch = objectIds.GetRange(i, objectIdBatchCount);
-                try
-                {
-                    adObjects = GraphClient.DirectoryObjects.GetByIds(
-                        new Common.MSGraph.Version1_0.DirectoryObjects.Models.Body()
-                        {
-                            Ids = objectIdBatch
-                        }).Value;
-                    result.AddRange(adObjects.Select(o => o.ToPSADObject()));
-                }
-                catch (Common.MSGraph.Version1_0.DirectoryObjects.Models.OdataErrorException oe) when (objectIds.Count == 1 && oe.Request.RequestUri.AbsolutePath.StartsWith("//"))
-                {
-                    // absorb malformed string
-                    // this is a quirk from how strings are formed when requesting an RA from an SP
-                    var errorGeneratedUser = new PSErrorHelperObject(ErrorTypeEnum.MalformedQuery);
-                    result.Add(errorGeneratedUser);
-
-                }
-            }
-            return result;
+            return GraphClient.DirectoryObjects.GetDirectoryObject(objectId)?.ToPSADObject();
         }
 
         public IEnumerable<PSADGroup> FilterGroups(ADObjectFilterOptions options, int first = int.MaxValue, int skip = 0)
@@ -257,7 +222,7 @@ namespace Microsoft.Azure.Commands.ActiveDirectory
                 try
                 {
                     // use GetObjectsByObjectId to handle Redirects in the CSP scenario
-                    PSADGroup group = this.GetObjectsByObjectId(new List<string> { options.Id }).FirstOrDefault() as PSADGroup;
+                    PSADGroup group = GetObjectByObjectId(options.Id) as PSADGroup;
                     if (group != null)
                     {
                         return new List<PSADGroup> { group };
