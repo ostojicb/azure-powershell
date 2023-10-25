@@ -1,0 +1,26 @@
+{
+  "parameters": {
+    "resourceGroupName": "rgdb",
+    "fleetName": "n8-e-37p3-89-7v-1em2b-h5",
+    "authorizedPrincipalName": "628pg2-vusks-q5r6-r7-0zl6j-3p7-5wtq8",
+    "subscriptionId": "nlyen",
+    "api-version": "2023-08-01-preview"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "properties": {
+          "applicationId": "andnvjghbpfbmglinvbgzasvla",
+          "objectId": "ugsztkspcgpydsisbcjps",
+          "tenantId": "qzqrnsuvqnkn",
+          "principalType": "Application",
+          "sqlUserType": "Default",
+          "role": "jsjycbvuhrwgenlxr"
+        },
+        "id": "glinzgvnxnpenpv",
+        "name": "nbztvt",
+        "type": "yitnnrolzyzrollddgvqkcahdiik"
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "resourceType": "fleets/authorizedPrincipals",
+  "apiVersion": "2023-08-01-preview",
+  "learnMore": {
+    "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager"
+  },
+  "commands": [
+    {
+      "name": "Get-AzDatabaseFleetManagerAuthorizedPrincipal",
+      "description": "Gets an authorized principal.",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/authorizedPrincipals/{authorizedPrincipalName}",
+      "help": {
+        "learnMore": {
+          "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager/get-azdatabasefleetmanagerauthorizedprincipal"
+        },
+        "parameterSets": [
+          {
+            "parameters": [
+              "-FleetName <String>",
+              "-Name <String>",
+              "-ResourceGroupName <String>",
+              "[-SubscriptionId <String[]>]"
+            ]
+          }
+        ]
+      },
+      "examples": [
+        {
+          "description": "Gets an authorized principal.",
+          "parameters": [
+            {
+              "name": "-FleetName",
+              "value": "[Path.fleetName]"
+            },
+            {
+              "name": "-Name",
+              "value": "[Path.authorizedPrincipalName]"
+            },
+            {
+              "name": "-ResourceGroupName",
+              "value": "[Path.resourceGroupName]"
+            },
+            {
+              "name": "-SubscriptionId",
+              "value": "[Path.subscriptionId]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Remove-AzDatabaseFleetManagerAuthorizedPrincipal",
+      "description": "Deletes an authorized principal.",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/authorizedPrincipals/{authorizedPrincipalName}",
+      "help": {
+        "learnMore": {
+          "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager/remove-azdatabasefleetmanagerauthorizedprincipal"
+        },
+        "parameterSets": [
+          {
+            "parameters": [
+              "-FleetName <String>",
+              "-Name <String>",
+              "-ResourceGroupName <String>",
+              "[-SubscriptionId <String>]"
+            ]
+          }
+        ]
+      },
+      "examples": [
+        {
+          "description": "Deletes an authorized principal.",
+          "parameters": [
+            {
+              "name": "-FleetName",
+              "value": "[Path.fleetName]"
+            },
+            {
+              "name": "-Name",
+              "value": "[Path.authorizedPrincipalName]"
+            },
+            {
+              "name": "-ResourceGroupName",
+              "value": "[Path.resourceGroupName]"
+            },
+            {
+              "name": "-SubscriptionId",
+              "value": "[Path.subscriptionId]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

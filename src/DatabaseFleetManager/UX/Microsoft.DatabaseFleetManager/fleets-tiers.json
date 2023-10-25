@@ -1,0 +1,95 @@
+{
+  "resourceType": "fleets/tiers",
+  "apiVersion": "2023-08-01-preview",
+  "learnMore": {
+    "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager"
+  },
+  "commands": [
+    {
+      "name": "Disable-AzDatabaseFleetManagerFleetTier",
+      "description": "Disables a tier.",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/tiers/{tierName}/disable",
+      "help": {
+        "learnMore": {
+          "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager/disable-azdatabasefleetmanagerfleettier"
+        },
+        "parameterSets": [
+          {
+            "parameters": [
+              "-FleetName <String>",
+              "-ResourceGroupName <String>",
+              "[-SubscriptionId <String>]",
+              "-TierName <String>"
+            ]
+          }
+        ]
+      },
+      "examples": [
+        {
+          "description": "Disables a tier.",
+          "parameters": [
+            {
+              "name": "-FleetName",
+              "value": "[Path.fleetName]"
+            },
+            {
+              "name": "-ResourceGroupName",
+              "value": "[Path.resourceGroupName]"
+            },
+            {
+              "name": "-SubscriptionId",
+              "value": "[Path.subscriptionId]"
+            },
+            {
+              "name": "-TierName",
+              "value": "[Path.tierName]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Get-AzDatabaseFleetManagerFleetTier",
+      "description": "Gets a tier resource.",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/tiers/{tierName}",
+      "help": {
+        "learnMore": {
+          "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager/get-azdatabasefleetmanagerfleettier"
+        },
+        "parameterSets": [
+          {
+            "parameters": [
+              "-FleetName <String>",
+              "-ResourceGroupName <String>",
+              "[-SubscriptionId <String[]>]",
+              "-TierName <String>"
+            ]
+          }
+        ]
+      },
+      "examples": [
+        {
+          "description": "Gets a tier resource.",
+          "parameters": [
+            {
+              "name": "-FleetName",
+              "value": "[Path.fleetName]"
+            },
+            {
+              "name": "-ResourceGroupName",
+              "value": "[Path.resourceGroupName]"
+            },
+            {
+              "name": "-SubscriptionId",
+              "value": "[Path.subscriptionId]"
+            },
+            {
+              "name": "-TierName",
+              "value": "[Path.tierName]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

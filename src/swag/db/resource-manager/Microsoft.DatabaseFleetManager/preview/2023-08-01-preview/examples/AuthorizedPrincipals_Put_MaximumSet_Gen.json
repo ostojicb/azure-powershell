@@ -1,0 +1,51 @@
+{
+  "parameters": {
+    "resourceGroupName": "rgdb",
+    "fleetName": "5i36q-8x6-7g0k",
+    "authorizedPrincipalName": "x5o3n-9bo",
+    "parameters": {
+      "properties": {
+        "applicationId": "andnvjghbpfbmglinvbgzasvla",
+        "objectId": "ugsztkspcgpydsisbcjps",
+        "tenantId": "qzqrnsuvqnkn",
+        "principalType": "Application",
+        "sqlUserType": "Default",
+        "role": "jsjycbvuhrwgenlxr"
+      }
+    },
+    "subscriptionId": "nlyen",
+    "api-version": "2023-08-01-preview"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "properties": {
+          "applicationId": "andnvjghbpfbmglinvbgzasvla",
+          "objectId": "ugsztkspcgpydsisbcjps",
+          "tenantId": "qzqrnsuvqnkn",
+          "principalType": "Application",
+          "sqlUserType": "Default",
+          "role": "jsjycbvuhrwgenlxr"
+        },
+        "id": "glinzgvnxnpenpv",
+        "name": "nbztvt",
+        "type": "yitnnrolzyzrollddgvqkcahdiik"
+      }
+    },
+    "201": {
+      "body": {
+        "properties": {
+          "applicationId": "andnvjghbpfbmglinvbgzasvla",
+          "objectId": "ugsztkspcgpydsisbcjps",
+          "tenantId": "qzqrnsuvqnkn",
+          "principalType": "Application",
+          "sqlUserType": "Default",
+          "role": "jsjycbvuhrwgenlxr"
+        },
+        "id": "glinzgvnxnpenpv",
+        "name": "nbztvt",
+        "type": "yitnnrolzyzrollddgvqkcahdiik"
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "parameters": {
+    "resourceGroupName": "rgdb",
+    "fleetName": "06-6afp-rb-0smq",
+    "parameters": {},
+    "subscriptionId": "nlyen",
+    "api-version": "2023-08-01-preview"
+  },
+  "responses": {
+    "200": {
+      "body": {}
+    }
+  }
+}

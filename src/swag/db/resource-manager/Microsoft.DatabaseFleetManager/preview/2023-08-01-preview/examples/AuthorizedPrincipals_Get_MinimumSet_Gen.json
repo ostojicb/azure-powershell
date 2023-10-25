@@ -1,0 +1,14 @@
+{
+  "parameters": {
+    "resourceGroupName": "rgdb",
+    "fleetName": "w0a-c22uo-cd-c",
+    "authorizedPrincipalName": "8p",
+    "subscriptionId": "nlyen",
+    "api-version": "2023-08-01-preview"
+  },
+  "responses": {
+    "200": {
+      "body": {}
+    }
+  }
+}

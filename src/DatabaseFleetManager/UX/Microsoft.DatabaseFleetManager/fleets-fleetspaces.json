@@ -1,0 +1,138 @@
+{
+  "resourceType": "fleets/fleetspaces",
+  "apiVersion": "2023-08-01-preview",
+  "learnMore": {
+    "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager"
+  },
+  "commands": [
+    {
+      "name": "Get-AzDatabaseFleetManagerFleetspace",
+      "description": "Gets fleetspace resource.",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/fleetspaces/{fleetspaceName}",
+      "help": {
+        "learnMore": {
+          "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager/get-azdatabasefleetmanagerfleetspace"
+        },
+        "parameterSets": [
+          {
+            "parameters": [
+              "-FleetName <String>",
+              "-Name <String>",
+              "-ResourceGroupName <String>",
+              "[-SubscriptionId <String[]>]"
+            ]
+          }
+        ]
+      },
+      "examples": [
+        {
+          "description": "Gets fleetspace resource.",
+          "parameters": [
+            {
+              "name": "-FleetName",
+              "value": "[Path.fleetName]"
+            },
+            {
+              "name": "-Name",
+              "value": "[Path.fleetspaceName]"
+            },
+            {
+              "name": "-ResourceGroupName",
+              "value": "[Path.resourceGroupName]"
+            },
+            {
+              "name": "-SubscriptionId",
+              "value": "[Path.subscriptionId]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Invoke-AzDatabaseFleetManagerServerMigration",
+      "description": "Migrates existing logical server into fleet.",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/fleetspaces/{fleetspaceName}/migrateServer",
+      "help": {
+        "learnMore": {
+          "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager/invoke-azdatabasefleetmanagerservermigration"
+        },
+        "parameterSets": [
+          {
+            "parameters": [
+              "-FleetName <String>",
+              "-FleetspaceName <String>",
+              "-ResourceGroupName <String>",
+              "[-SubscriptionId <String>]"
+            ]
+          }
+        ]
+      },
+      "examples": [
+        {
+          "description": "Migrates existing logical server into fleet.",
+          "parameters": [
+            {
+              "name": "-FleetName",
+              "value": "[Path.fleetName]"
+            },
+            {
+              "name": "-FleetspaceName",
+              "value": "[Path.fleetspaceName]"
+            },
+            {
+              "name": "-ResourceGroupName",
+              "value": "[Path.resourceGroupName]"
+            },
+            {
+              "name": "-SubscriptionId",
+              "value": "[Path.subscriptionId]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Remove-AzDatabaseFleetManagerFleetspace",
+      "description": "Deletes a fleetspace.",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/fleetspaces/{fleetspaceName}",
+      "help": {
+        "learnMore": {
+          "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager/remove-azdatabasefleetmanagerfleetspace"
+        },
+        "parameterSets": [
+          {
+            "parameters": [
+              "-FleetName <String>",
+              "-Name <String>",
+              "-ResourceGroupName <String>",
+              "[-SubscriptionId <String>]"
+            ]
+          }
+        ]
+      },
+      "examples": [
+        {
+          "description": "Deletes a fleetspace.",
+          "parameters": [
+            {
+              "name": "-FleetName",
+              "value": "[Path.fleetName]"
+            },
+            {
+              "name": "-Name",
+              "value": "[Path.fleetspaceName]"
+            },
+            {
+              "name": "-ResourceGroupName",
+              "value": "[Path.resourceGroupName]"
+            },
+            {
+              "name": "-SubscriptionId",
+              "value": "[Path.subscriptionId]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

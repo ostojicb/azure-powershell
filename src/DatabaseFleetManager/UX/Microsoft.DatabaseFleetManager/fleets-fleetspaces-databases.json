@@ -1,0 +1,153 @@
+{
+  "resourceType": "fleets/fleetspaces/databases",
+  "apiVersion": "2023-08-01-preview",
+  "learnMore": {
+    "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager"
+  },
+  "commands": [
+    {
+      "name": "Get-AzDatabaseFleetManagerFleetDatabase",
+      "description": "Gets a fleet database.",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/fleetspaces/{fleetspaceName}/databases/{databaseName}",
+      "help": {
+        "learnMore": {
+          "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager/get-azdatabasefleetmanagerfleetdatabase"
+        },
+        "parameterSets": [
+          {
+            "parameters": [
+              "-DatabaseName <String>",
+              "-FleetName <String>",
+              "-FleetspaceName <String>",
+              "-ResourceGroupName <String>",
+              "[-SubscriptionId <String[]>]"
+            ]
+          }
+        ]
+      },
+      "examples": [
+        {
+          "description": "Gets a fleet database.",
+          "parameters": [
+            {
+              "name": "-DatabaseName",
+              "value": "[Path.databaseName]"
+            },
+            {
+              "name": "-FleetName",
+              "value": "[Path.fleetName]"
+            },
+            {
+              "name": "-FleetspaceName",
+              "value": "[Path.fleetspaceName]"
+            },
+            {
+              "name": "-ResourceGroupName",
+              "value": "[Path.resourceGroupName]"
+            },
+            {
+              "name": "-SubscriptionId",
+              "value": "[Path.subscriptionId]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Remove-AzDatabaseFleetManagerFleetDatabase",
+      "description": "Deletes a fleet database.",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/fleetspaces/{fleetspaceName}/databases/{databaseName}",
+      "help": {
+        "learnMore": {
+          "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager/remove-azdatabasefleetmanagerfleetdatabase"
+        },
+        "parameterSets": [
+          {
+            "parameters": [
+              "-DatabaseName <String>",
+              "-FleetName <String>",
+              "-FleetspaceName <String>",
+              "-ResourceGroupName <String>",
+              "[-SubscriptionId <String>]"
+            ]
+          }
+        ]
+      },
+      "examples": [
+        {
+          "description": "Deletes a fleet database.",
+          "parameters": [
+            {
+              "name": "-DatabaseName",
+              "value": "[Path.databaseName]"
+            },
+            {
+              "name": "-FleetName",
+              "value": "[Path.fleetName]"
+            },
+            {
+              "name": "-FleetspaceName",
+              "value": "[Path.fleetspaceName]"
+            },
+            {
+              "name": "-ResourceGroupName",
+              "value": "[Path.resourceGroupName]"
+            },
+            {
+              "name": "-SubscriptionId",
+              "value": "[Path.subscriptionId]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rename-AzDatabaseFleetManagerFleetDatabaseTier",
+      "description": "Moves database to a different tier.",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/fleetspaces/{fleetspaceName}/databases/{databaseName}/changeTier",
+      "help": {
+        "learnMore": {
+          "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager/rename-azdatabasefleetmanagerfleetdatabasetier"
+        },
+        "parameterSets": [
+          {
+            "parameters": [
+              "-DatabaseName <String>",
+              "-FleetName <String>",
+              "-FleetspaceName <String>",
+              "-ResourceGroupName <String>",
+              "[-SubscriptionId <String>]"
+            ]
+          }
+        ]
+      },
+      "examples": [
+        {
+          "description": "Moves database to a different tier.",
+          "parameters": [
+            {
+              "name": "-DatabaseName",
+              "value": "[Path.databaseName]"
+            },
+            {
+              "name": "-FleetName",
+              "value": "[Path.fleetName]"
+            },
+            {
+              "name": "-FleetspaceName",
+              "value": "[Path.fleetspaceName]"
+            },
+            {
+              "name": "-ResourceGroupName",
+              "value": "[Path.resourceGroupName]"
+            },
+            {
+              "name": "-SubscriptionId",
+              "value": "[Path.subscriptionId]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

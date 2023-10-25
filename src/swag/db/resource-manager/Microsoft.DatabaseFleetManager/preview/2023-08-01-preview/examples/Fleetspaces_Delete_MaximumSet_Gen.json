@@ -1,0 +1,17 @@
+{
+  "parameters": {
+    "resourceGroupName": "rgdb",
+    "fleetName": "35xj-w4-5-4-320",
+    "fleetspaceName": "cs-kcp6jx-3sk3h2-xb-1-6742-dq-21h13",
+    "subscriptionId": "nlyen",
+    "api-version": "2023-08-01-preview"
+  },
+  "responses": {
+    "202": {
+      "headers": {
+        "location": "https://contoso.com/operationstatus"
+      }
+    },
+    "204": {}
+  }
+}

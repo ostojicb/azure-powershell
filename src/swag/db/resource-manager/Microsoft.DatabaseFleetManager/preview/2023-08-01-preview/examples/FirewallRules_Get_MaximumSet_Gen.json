@@ -1,0 +1,22 @@
+{
+  "parameters": {
+    "resourceGroupName": "rgdb",
+    "fleetName": "6xnbym-4v1-6p54",
+    "firewallRuleName": "3-8y6",
+    "subscriptionId": "nlyen",
+    "api-version": "2023-08-01-preview"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "properties": {
+          "startIpAddress": "ggklgbhbndqwguzj",
+          "endIpAddress": "wkeeiwetkxmgdvrucjkvimeabvdh"
+        },
+        "id": "vfvdrfzcjuicfvqujx",
+        "name": "oyagssllyaemxyhorlrbmw",
+        "type": "aunudslhzgcxmq"
+      }
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "resourceType": "fleets/firewallRules",
+  "apiVersion": "2023-08-01-preview",
+  "learnMore": {
+    "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager"
+  },
+  "commands": [
+    {
+      "name": "Get-AzDatabaseFleetManagerFirewallRule",
+      "description": "Gets a firewall rule.",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/firewallRules/{firewallRuleName}",
+      "help": {
+        "learnMore": {
+          "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager/get-azdatabasefleetmanagerfirewallrule"
+        },
+        "parameterSets": [
+          {
+            "parameters": [
+              "-FleetName <String>",
+              "-Name <String>",
+              "-ResourceGroupName <String>",
+              "[-SubscriptionId <String[]>]"
+            ]
+          }
+        ]
+      },
+      "examples": [
+        {
+          "description": "Gets a firewall rule.",
+          "parameters": [
+            {
+              "name": "-FleetName",
+              "value": "[Path.fleetName]"
+            },
+            {
+              "name": "-Name",
+              "value": "[Path.firewallRuleName]"
+            },
+            {
+              "name": "-ResourceGroupName",
+              "value": "[Path.resourceGroupName]"
+            },
+            {
+              "name": "-SubscriptionId",
+              "value": "[Path.subscriptionId]"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Remove-AzDatabaseFleetManagerFirewallRule",
+      "description": "Deletes a firewall rule.",
+      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/firewallRules/{firewallRuleName}",
+      "help": {
+        "learnMore": {
+          "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager/remove-azdatabasefleetmanagerfirewallrule"
+        },
+        "parameterSets": [
+          {
+            "parameters": [
+              "-FleetName <String>",
+              "-Name <String>",
+              "-ResourceGroupName <String>",
+              "[-SubscriptionId <String>]"
+            ]
+          }
+        ]
+      },
+      "examples": [
+        {
+          "description": "Deletes a firewall rule.",
+          "parameters": [
+            {
+              "name": "-FleetName",
+              "value": "[Path.fleetName]"
+            },
+            {
+              "name": "-Name",
+              "value": "[Path.firewallRuleName]"
+            },
+            {
+              "name": "-ResourceGroupName",
+              "value": "[Path.resourceGroupName]"
+            },
+            {
+              "name": "-SubscriptionId",
+              "value": "[Path.subscriptionId]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

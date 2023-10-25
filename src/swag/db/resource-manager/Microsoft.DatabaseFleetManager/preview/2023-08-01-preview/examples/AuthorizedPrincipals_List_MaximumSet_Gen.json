@@ -1,0 +1,30 @@
+{
+  "parameters": {
+    "resourceGroupName": "rgdb",
+    "fleetName": "d5",
+    "subscriptionId": "nlyen",
+    "api-version": "2023-08-01-preview"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "value": [
+          {
+            "properties": {
+              "applicationId": "andnvjghbpfbmglinvbgzasvla",
+              "objectId": "ugsztkspcgpydsisbcjps",
+              "tenantId": "qzqrnsuvqnkn",
+              "principalType": "Application",
+              "sqlUserType": "Default",
+              "role": "jsjycbvuhrwgenlxr"
+            },
+            "id": "glinzgvnxnpenpv",
+            "name": "nbztvt",
+            "type": "yitnnrolzyzrollddgvqkcahdiik"
+          }
+        ],
+        "nextLink": "ogjsioxcfa"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "parameters": {
+    "resourceGroupName": "rgdb",
+    "fleetName": "yj5mb-48x66-i147-rn-579",
+    "subscriptionId": "nlyen",
+    "api-version": "2023-08-01-preview"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "value": [
+          {
+            "properties": {},
+            "id": "slujzkiruafmaezqlrleqvvpn",
+            "name": "nsfsshqs",
+            "type": "spads"
+          }
+        ],
+        "nextLink": "ziiulwt"
+      }
+    }
+  }
+}

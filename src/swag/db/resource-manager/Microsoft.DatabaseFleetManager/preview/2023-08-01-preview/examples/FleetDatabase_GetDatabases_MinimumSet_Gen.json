@@ -1,0 +1,14 @@
+{
+  "parameters": {
+    "resourceGroupName": "rgdb",
+    "fleetName": "fs2e389-5jz-nf8395",
+    "fleetspaceName": "2ys-qy-h1-3hl6l-0",
+    "subscriptionId": "nlyen",
+    "api-version": "2023-08-01-preview"
+  },
+  "responses": {
+    "200": {
+      "body": {}
+    }
+  }
+}

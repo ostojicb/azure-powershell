@@ -1,0 +1,45 @@
+{
+  "parameters": {
+    "resourceGroupName": "rgdb",
+    "fleetName": "3xw68-1ii086-722-79-3s91-tl",
+    "parameters": {
+      "properties": {
+        "description": "mgm",
+        "mainPrincipal": {
+          "applicationId": "cezazkpatkhuefpc",
+          "objectId": "vvaj",
+          "tenantId": "jgmgebpefdjpdvmytaebfmesjgzk",
+          "principalType": "Application"
+        }
+      },
+      "location": "jztwlpvwvlldmalpgqrgionjlt",
+      "tags": {
+        "key7028": "svbgawziv"
+      }
+    },
+    "subscriptionId": "nlyen",
+    "api-version": "2023-08-01-preview"
+  },
+  "responses": {
+    "200": {
+      "body": {
+        "properties": {
+          "description": "mgm",
+          "mainPrincipal": {
+            "applicationId": "cezazkpatkhuefpc",
+            "objectId": "vvaj",
+            "tenantId": "jgmgebpefdjpdvmytaebfmesjgzk",
+            "principalType": "Application"
+          }
+        },
+        "location": "jztwlpvwvlldmalpgqrgionjlt",
+        "tags": {
+          "key7028": "svbgawziv"
+        },
+        "id": "jnuwsmmigcbbgsykuhmjelsmmyye",
+        "name": "kupimejhojunjhmykdvbzm",
+        "type": "kis"
+      }
+    }
+  }
+}
