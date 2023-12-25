@@ -1,59 +1,39 @@
 ---
 external help file:
 Module Name: Az.DatabaseFleetManager
-online version: https://learn.microsoft.com/powershell/module/az.databasefleetmanager/update-azdatabasefleetmanagerfleet
+online version: https://learn.microsoft.com/powershell/module/az.databasefleetmanager/new-azdatabasefleetmanagerfleet
 schema: 2.0.0
 ---
 
-# Update-AzDatabaseFleetManagerFleet
+# New-AzDatabaseFleetManagerFleet
 
 ## SYNOPSIS
-Modifies a fleet resource.
+Create a fleet resource.
 
 ## SYNTAX
 
-### PatchExpanded (Default)
+### CreateExpanded (Default)
 ```
-Update-AzDatabaseFleetManagerFleet -Name <String> -ResourceGroupName <String> -Location <String>
+New-AzDatabaseFleetManagerFleet -Name <String> -ResourceGroupName <String> -Location <String>
  [-SubscriptionId <String>] [-Description <String>] [-MainPrincipalApplicationId <String>]
  [-MainPrincipalObjectId <String>] [-MainPrincipalTenantId <String>] [-MainPrincipalType <String>]
  [-Tag <Hashtable>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### Patch
+### CreateViaJsonFilePath
 ```
-Update-AzDatabaseFleetManagerFleet -Name <String> -ResourceGroupName <String> -Parameter <IFleet>
+New-AzDatabaseFleetManagerFleet -Name <String> -ResourceGroupName <String> -JsonFilePath <String>
  [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### PatchViaIdentity
+### CreateViaJsonString
 ```
-Update-AzDatabaseFleetManagerFleet -InputObject <IDatabaseFleetManagerIdentity> -Parameter <IFleet>
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### PatchViaIdentityExpanded
-```
-Update-AzDatabaseFleetManagerFleet -InputObject <IDatabaseFleetManagerIdentity> -Location <String>
- [-Description <String>] [-MainPrincipalApplicationId <String>] [-MainPrincipalObjectId <String>]
- [-MainPrincipalTenantId <String>] [-MainPrincipalType <String>] [-Tag <Hashtable>]
- [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### PatchViaJsonFilePath
-```
-Update-AzDatabaseFleetManagerFleet -Name <String> -ResourceGroupName <String> -JsonFilePath <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### PatchViaJsonString
-```
-Update-AzDatabaseFleetManagerFleet -Name <String> -ResourceGroupName <String> -JsonString <String>
+New-AzDatabaseFleetManagerFleet -Name <String> -ResourceGroupName <String> -JsonString <String>
  [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Modifies a fleet resource.
+Create a fleet resource.
 
 ## EXAMPLES
 
@@ -63,7 +43,7 @@ Modifies a fleet resource.
 ```
 
 ```output
-{{ Add output here }}
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
 {{ Add description here }}
@@ -74,7 +54,7 @@ Modifies a fleet resource.
 ```
 
 ```output
-{{ Add output here }}
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
 {{ Add description here }}
@@ -102,7 +82,7 @@ Accept wildcard characters: False
 
 ```yaml
 Type: System.String
-Parameter Sets: PatchExpanded, PatchViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -112,28 +92,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
-Parameter Sets: PatchViaIdentity, PatchViaIdentityExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -JsonFilePath
-Path of Json file supplied to the Patch operation
+Path of Json file supplied to the Create operation
 
 ```yaml
 Type: System.String
-Parameter Sets: PatchViaJsonFilePath
+Parameter Sets: CreateViaJsonFilePath
 Aliases:
 
 Required: True
@@ -144,11 +108,11 @@ Accept wildcard characters: False
 ```
 
 ### -JsonString
-Json string supplied to the Patch operation
+Json string supplied to the Create operation
 
 ```yaml
 Type: System.String
-Parameter Sets: PatchViaJsonString
+Parameter Sets: CreateViaJsonString
 Aliases:
 
 Required: True
@@ -163,7 +127,7 @@ The geo-location where the resource lives
 
 ```yaml
 Type: System.String
-Parameter Sets: PatchExpanded, PatchViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: True
@@ -178,7 +142,7 @@ Application Id of the main principal.
 
 ```yaml
 Type: System.String
-Parameter Sets: PatchExpanded, PatchViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -193,7 +157,7 @@ Object Id of the main principal.
 
 ```yaml
 Type: System.String
-Parameter Sets: PatchExpanded, PatchViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -208,7 +172,7 @@ Tenant Id of the main principal.
 
 ```yaml
 Type: System.String
-Parameter Sets: PatchExpanded, PatchViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -223,7 +187,7 @@ Principal type of the main principal.
 
 ```yaml
 Type: System.String
-Parameter Sets: PatchExpanded, PatchViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -238,7 +202,7 @@ Name of the database fleet.
 
 ```yaml
 Type: System.String
-Parameter Sets: Patch, PatchExpanded, PatchViaJsonFilePath, PatchViaJsonString
+Parameter Sets: (All)
 Aliases: FleetName
 
 Required: True
@@ -248,29 +212,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Parameter
-A SQL Database Fleet.
-To construct, see NOTES section for PARAMETER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleet
-Parameter Sets: Patch, PatchViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -ResourceGroupName
 Name of the resource group that contains the resource.
 You can obtain this value from the Azure Resource Manager API or the portal.
 
 ```yaml
 Type: System.String
-Parameter Sets: Patch, PatchExpanded, PatchViaJsonFilePath, PatchViaJsonString
+Parameter Sets: (All)
 Aliases:
 
 Required: True
@@ -285,7 +233,7 @@ Subscription ID that identifies an Azure subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: Patch, PatchExpanded, PatchViaJsonFilePath, PatchViaJsonString
+Parameter Sets: (All)
 Aliases:
 
 Required: False
@@ -300,7 +248,7 @@ Resource tags.
 
 ```yaml
 Type: System.Collections.Hashtable
-Parameter Sets: PatchExpanded, PatchViaIdentityExpanded
+Parameter Sets: CreateExpanded
 Aliases:
 
 Required: False
@@ -345,10 +293,6 @@ Accept wildcard characters: False
 This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable. For more information, see [about_CommonParameters](http://go.microsoft.com/fwlink/?LinkID=113216).
 
 ## INPUTS
-
-### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
-
-### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleet
 
 ## OUTPUTS
 

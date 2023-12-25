@@ -1,38 +1,52 @@
 ---
 external help file:
 Module Name: Az.DatabaseFleetManager
-online version: https://learn.microsoft.com/powershell/module/az.databasefleetmanager/remove-azdatabasefleetmanagerauthorizedprincipal
+online version: https://learn.microsoft.com/powershell/module/az.databasefleetmanager/new-azdatabasefleetmanagerfleetspace
 schema: 2.0.0
 ---
 
-# Remove-AzDatabaseFleetManagerAuthorizedPrincipal
+# New-AzDatabaseFleetManagerFleetspace
 
 ## SYNOPSIS
-Deletes an authorized principal.
+Create a fleetspace resource.
 
 ## SYNTAX
 
-### Delete (Default)
+### CreateExpanded (Default)
 ```
-Remove-AzDatabaseFleetManagerAuthorizedPrincipal -FleetName <String> -Name <String>
- -ResourceGroupName <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### DeleteViaIdentity
-```
-Remove-AzDatabaseFleetManagerAuthorizedPrincipal -InputObject <IDatabaseFleetManagerIdentity>
- [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzDatabaseFleetManagerFleetspace -FleetName <String> -Name <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-Property <IAny>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
-### DeleteViaIdentityFleet
+### CreateViaIdentityFleet
 ```
-Remove-AzDatabaseFleetManagerAuthorizedPrincipal -FleetInputObject <IDatabaseFleetManagerIdentity>
- -Name <String> [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzDatabaseFleetManagerFleetspace -FleetInputObject <IDatabaseFleetManagerIdentity> -Name <String>
+ -Parameter <IFleetspace> [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaIdentityFleetExpanded
+```
+New-AzDatabaseFleetManagerFleetspace -FleetInputObject <IDatabaseFleetManagerIdentity> -Name <String>
+ [-Property <IAny>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaJsonFilePath
+```
+New-AzDatabaseFleetManagerFleetspace -FleetName <String> -Name <String> -ResourceGroupName <String>
+ -JsonFilePath <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### CreateViaJsonString
+```
+New-AzDatabaseFleetManagerFleetspace -FleetName <String> -Name <String> -ResourceGroupName <String>
+ -JsonString <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Deletes an authorized principal.
+Create a fleetspace resource.
 
 ## EXAMPLES
 
@@ -42,7 +56,7 @@ Deletes an authorized principal.
 ```
 
 ```output
-{{ Add output here }}
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
 {{ Add description here }}
@@ -53,7 +67,7 @@ Deletes an authorized principal.
 ```
 
 ```output
-{{ Add output here }}
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
 {{ Add description here }}
@@ -82,7 +96,7 @@ To construct, see NOTES section for FLEETINPUTOBJECT properties and create a has
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
-Parameter Sets: DeleteViaIdentityFleet
+Parameter Sets: CreateViaIdentityFleet, CreateViaIdentityFleetExpanded
 Aliases:
 
 Required: True
@@ -97,7 +111,7 @@ Name of the database fleet.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: CreateExpanded, CreateViaJsonFilePath, CreateViaJsonString
 Aliases:
 
 Required: True
@@ -107,13 +121,58 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+### -JsonFilePath
+Path of Json file supplied to the Create operation
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
-Parameter Sets: DeleteViaIdentity
+Type: System.String
+Parameter Sets: CreateViaJsonFilePath
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -JsonString
+Json string supplied to the Create operation
+
+```yaml
+Type: System.String
+Parameter Sets: CreateViaJsonString
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+Name of the fleetspace.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: FleetspaceName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Parameter
+A SQL Database Fleetspace.
+To construct, see NOTES section for PARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleetspace
+Parameter Sets: CreateViaIdentityFleet
 Aliases:
 
 Required: True
@@ -123,27 +182,12 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name
-Name of the authorized principal.
+### -Property
+A Fleetspace properties.
 
 ```yaml
-Type: System.String
-Parameter Sets: Delete, DeleteViaIdentityFleet
-Aliases: AuthorizedPrincipalName
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IAny
+Parameter Sets: CreateExpanded, CreateViaIdentityFleetExpanded
 Aliases:
 
 Required: False
@@ -159,7 +203,7 @@ You can obtain this value from the Azure Resource Manager API or the portal.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: CreateExpanded, CreateViaJsonFilePath, CreateViaJsonString
 Aliases:
 
 Required: True
@@ -174,7 +218,7 @@ Subscription ID that identifies an Azure subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: CreateExpanded, CreateViaJsonFilePath, CreateViaJsonString
 Aliases:
 
 Required: False
@@ -222,9 +266,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
 
+### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleetspace
+
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleetspace
 
 ## NOTES
 

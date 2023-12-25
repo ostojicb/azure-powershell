@@ -1,79 +1,74 @@
 ---
 external help file:
 Module Name: Az.DatabaseFleetManager
-online version: https://learn.microsoft.com/powershell/module/az.databasefleetmanager/invoke-azdatabasefleetmanagerservermigration
+online version: https://learn.microsoft.com/powershell/module/az.databasefleetmanager/update-azdatabasefleetmanagerdatabase
 schema: 2.0.0
 ---
 
-# Invoke-AzDatabaseFleetManagerServerMigration
+# Update-AzDatabaseFleetManagerDatabase
 
 ## SYNOPSIS
-Migrates existing logical server into fleet.
+Updates a fleet database.
 
 ## SYNTAX
 
-### ServerExpanded (Default)
+### UpdateExpanded (Default)
 ```
-Invoke-AzDatabaseFleetManagerServerMigration -FleetName <String> -FleetspaceName <String>
- -ResourceGroupName <String> [-SubscriptionId <String>] [-DestinationTierOverride <Hashtable>]
- [-SourceResourceGroupName <String>] [-SourceServerName <String>] [-SourceSubscriptionId <String>]
- [-TierName <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### Server
-```
-Invoke-AzDatabaseFleetManagerServerMigration -FleetName <String> -FleetspaceName <String>
- -ResourceGroupName <String> -Parameter <IMigrateServerDefinition> [-SubscriptionId <String>]
+Update-AzDatabaseFleetManagerDatabase -FleetName <String> -FleetspaceName <String> -Name <String>
+ -ResourceGroupName <String> [-SubscriptionId <String>] [-ResourceTag <Hashtable>]
  [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ServerViaIdentity
+### UpdateViaIdentityExpanded
 ```
-Invoke-AzDatabaseFleetManagerServerMigration -InputObject <IDatabaseFleetManagerIdentity>
- -Parameter <IMigrateServerDefinition> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
-```
-
-### ServerViaIdentityExpanded
-```
-Invoke-AzDatabaseFleetManagerServerMigration -InputObject <IDatabaseFleetManagerIdentity>
- [-DestinationTierOverride <Hashtable>] [-SourceResourceGroupName <String>] [-SourceServerName <String>]
- [-SourceSubscriptionId <String>] [-TierName <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzDatabaseFleetManagerDatabase -InputObject <IDatabaseFleetManagerIdentity> [-ResourceTag <Hashtable>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ServerViaIdentityFleet
+### UpdateViaIdentityFleet
 ```
-Invoke-AzDatabaseFleetManagerServerMigration -FleetInputObject <IDatabaseFleetManagerIdentity>
- -FleetspaceName <String> -Parameter <IMigrateServerDefinition> [-DefaultProfile <PSObject>] [-AsJob]
+Update-AzDatabaseFleetManagerDatabase -FleetInputObject <IDatabaseFleetManagerIdentity>
+ -FleetspaceName <String> -Name <String> -Parameter <IFleetDatabase> [-DefaultProfile <PSObject>] [-AsJob]
  [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ServerViaIdentityFleetExpanded
+### UpdateViaIdentityFleetExpanded
 ```
-Invoke-AzDatabaseFleetManagerServerMigration -FleetInputObject <IDatabaseFleetManagerIdentity>
- -FleetspaceName <String> [-DestinationTierOverride <Hashtable>] [-SourceResourceGroupName <String>]
- [-SourceServerName <String>] [-SourceSubscriptionId <String>] [-TierName <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+Update-AzDatabaseFleetManagerDatabase -FleetInputObject <IDatabaseFleetManagerIdentity>
+ -FleetspaceName <String> -Name <String> [-ResourceTag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob]
+ [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ServerViaJsonFilePath
+### UpdateViaIdentityFleetspace
 ```
-Invoke-AzDatabaseFleetManagerServerMigration -FleetName <String> -FleetspaceName <String>
+Update-AzDatabaseFleetManagerDatabase -FleetspaceInputObject <IDatabaseFleetManagerIdentity> -Name <String>
+ -Parameter <IFleetDatabase> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### UpdateViaIdentityFleetspaceExpanded
+```
+Update-AzDatabaseFleetManagerDatabase -FleetspaceInputObject <IDatabaseFleetManagerIdentity> -Name <String>
+ [-ResourceTag <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### UpdateViaJsonFilePath
+```
+Update-AzDatabaseFleetManagerDatabase -FleetName <String> -FleetspaceName <String> -Name <String>
  -ResourceGroupName <String> -JsonFilePath <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>]
  [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ServerViaJsonString
+### UpdateViaJsonString
 ```
-Invoke-AzDatabaseFleetManagerServerMigration -FleetName <String> -FleetspaceName <String>
+Update-AzDatabaseFleetManagerDatabase -FleetName <String> -FleetspaceName <String> -Name <String>
  -ResourceGroupName <String> -JsonString <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>]
  [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Migrates existing logical server into fleet.
+Updates a fleet database.
 
 ## EXAMPLES
 
@@ -83,7 +78,7 @@ Migrates existing logical server into fleet.
 ```
 
 ```output
-{{ Add output here }}
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
 {{ Add description here }}
@@ -94,7 +89,7 @@ Migrates existing logical server into fleet.
 ```
 
 ```output
-{{ Add output here }}
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
 {{ Add description here }}
@@ -132,28 +127,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -DestinationTierOverride
-Dictionary of \<string\>
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: ServerExpanded, ServerViaIdentityExpanded, ServerViaIdentityFleetExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -FleetInputObject
 Identity Parameter
 To construct, see NOTES section for FLEETINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
-Parameter Sets: ServerViaIdentityFleet, ServerViaIdentityFleetExpanded
+Parameter Sets: UpdateViaIdentityFleet, UpdateViaIdentityFleetExpanded
 Aliases:
 
 Required: True
@@ -168,7 +148,7 @@ Name of the database fleet.
 
 ```yaml
 Type: System.String
-Parameter Sets: Server, ServerExpanded, ServerViaJsonFilePath, ServerViaJsonString
+Parameter Sets: UpdateExpanded, UpdateViaJsonFilePath, UpdateViaJsonString
 Aliases:
 
 Required: True
@@ -178,12 +158,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -FleetspaceInputObject
+Identity Parameter
+To construct, see NOTES section for FLEETSPACEINPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
+Parameter Sets: UpdateViaIdentityFleetspace, UpdateViaIdentityFleetspaceExpanded
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -FleetspaceName
 Name of the fleetspace.
 
 ```yaml
 Type: System.String
-Parameter Sets: Server, ServerExpanded, ServerViaIdentityFleet, ServerViaIdentityFleetExpanded, ServerViaJsonFilePath, ServerViaJsonString
+Parameter Sets: UpdateExpanded, UpdateViaIdentityFleet, UpdateViaIdentityFleetExpanded, UpdateViaJsonFilePath, UpdateViaJsonString
 Aliases:
 
 Required: True
@@ -199,7 +195,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
-Parameter Sets: ServerViaIdentity, ServerViaIdentityExpanded
+Parameter Sets: UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -210,11 +206,11 @@ Accept wildcard characters: False
 ```
 
 ### -JsonFilePath
-Path of Json file supplied to the Server operation
+Path of Json file supplied to the Update operation
 
 ```yaml
 Type: System.String
-Parameter Sets: ServerViaJsonFilePath
+Parameter Sets: UpdateViaJsonFilePath
 Aliases:
 
 Required: True
@@ -225,12 +221,27 @@ Accept wildcard characters: False
 ```
 
 ### -JsonString
-Json string supplied to the Server operation
+Json string supplied to the Update operation
 
 ```yaml
 Type: System.String
-Parameter Sets: ServerViaJsonString
+Parameter Sets: UpdateViaJsonString
 Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+Name of the database.
+
+```yaml
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityFleet, UpdateViaIdentityFleetExpanded, UpdateViaIdentityFleetspace, UpdateViaIdentityFleetspaceExpanded, UpdateViaJsonFilePath, UpdateViaJsonString
+Aliases: DatabaseName
 
 Required: True
 Position: Named
@@ -255,12 +266,12 @@ Accept wildcard characters: False
 ```
 
 ### -Parameter
-.
+A SQL Database Fleet.
 To construct, see NOTES section for PARAMETER properties and create a hash table.
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IMigrateServerDefinition
-Parameter Sets: Server, ServerViaIdentity, ServerViaIdentityFleet
+Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleetDatabase
+Parameter Sets: UpdateViaIdentityFleet, UpdateViaIdentityFleetspace
 Aliases:
 
 Required: True
@@ -276,7 +287,7 @@ You can obtain this value from the Azure Resource Manager API or the portal.
 
 ```yaml
 Type: System.String
-Parameter Sets: Server, ServerExpanded, ServerViaJsonFilePath, ServerViaJsonString
+Parameter Sets: UpdateExpanded, UpdateViaJsonFilePath, UpdateViaJsonString
 Aliases:
 
 Required: True
@@ -286,42 +297,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -SourceResourceGroupName
-.
+### -ResourceTag
+Dictionary of \<string\>
 
 ```yaml
-Type: System.String
-Parameter Sets: ServerExpanded, ServerViaIdentityExpanded, ServerViaIdentityFleetExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SourceServerName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: ServerExpanded, ServerViaIdentityExpanded, ServerViaIdentityFleetExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SourceSubscriptionId
-.
-
-```yaml
-Type: System.String
-Parameter Sets: ServerExpanded, ServerViaIdentityExpanded, ServerViaIdentityFleetExpanded
+Type: System.Collections.Hashtable
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded, UpdateViaIdentityFleetExpanded, UpdateViaIdentityFleetspaceExpanded
 Aliases:
 
 Required: False
@@ -336,27 +317,12 @@ Subscription ID that identifies an Azure subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: Server, ServerExpanded, ServerViaJsonFilePath, ServerViaJsonString
+Parameter Sets: UpdateExpanded, UpdateViaJsonFilePath, UpdateViaJsonString
 Aliases:
 
 Required: False
 Position: Named
 Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TierName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: ServerExpanded, ServerViaIdentityExpanded, ServerViaIdentityFleetExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -399,11 +365,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
 
-### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IMigrateServerDefinition
+### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleetDatabase
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleetDatabase
 
 ## NOTES
 

@@ -97,7 +97,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-.
+Name of the database fleet.
 
 ```yaml
 Type: System.String
@@ -151,9 +151,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.Api20230801Preview.IFleet
+### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleet
 
-### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.Api20230801Preview.IFleetListResult
+### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleetListResult
 
 ## NOTES
 

@@ -1,38 +1,53 @@
 ---
 external help file:
 Module Name: Az.DatabaseFleetManager
-online version: https://learn.microsoft.com/powershell/module/az.databasefleetmanager/remove-azdatabasefleetmanagerauthorizedprincipal
+online version: https://learn.microsoft.com/powershell/module/az.databasefleetmanager/new-azdatabasefleetmanagerfirewallrule
 schema: 2.0.0
 ---
 
-# Remove-AzDatabaseFleetManagerAuthorizedPrincipal
+# New-AzDatabaseFleetManagerFirewallRule
 
 ## SYNOPSIS
-Deletes an authorized principal.
+Create a firewall rule.
 
 ## SYNTAX
 
-### Delete (Default)
+### CreateExpanded (Default)
 ```
-Remove-AzDatabaseFleetManagerAuthorizedPrincipal -FleetName <String> -Name <String>
- -ResourceGroupName <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-PassThru] [-Confirm]
- [-WhatIf] [<CommonParameters>]
-```
-
-### DeleteViaIdentity
-```
-Remove-AzDatabaseFleetManagerAuthorizedPrincipal -InputObject <IDatabaseFleetManagerIdentity>
- [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzDatabaseFleetManagerFirewallRule -FleetName <String> -Name <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-EndIPAddress <String>] [-StartIPAddress <String>] [-DefaultProfile <PSObject>]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### DeleteViaIdentityFleet
+### CreateViaIdentityFleet
 ```
-Remove-AzDatabaseFleetManagerAuthorizedPrincipal -FleetInputObject <IDatabaseFleetManagerIdentity>
- -Name <String> [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+New-AzDatabaseFleetManagerFirewallRule -FleetInputObject <IDatabaseFleetManagerIdentity> -Name <String>
+ -Parameter <IFirewallRule> [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### CreateViaIdentityFleetExpanded
+```
+New-AzDatabaseFleetManagerFirewallRule -FleetInputObject <IDatabaseFleetManagerIdentity> -Name <String>
+ [-EndIPAddress <String>] [-StartIPAddress <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### CreateViaJsonFilePath
+```
+New-AzDatabaseFleetManagerFirewallRule -FleetName <String> -Name <String> -ResourceGroupName <String>
+ -JsonFilePath <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
+```
+
+### CreateViaJsonString
+```
+New-AzDatabaseFleetManagerFirewallRule -FleetName <String> -Name <String> -ResourceGroupName <String>
+ -JsonString <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Deletes an authorized principal.
+Create a firewall rule.
 
 ## EXAMPLES
 
@@ -42,7 +57,7 @@ Deletes an authorized principal.
 ```
 
 ```output
-{{ Add output here }}
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
 {{ Add description here }}
@@ -53,7 +68,7 @@ Deletes an authorized principal.
 ```
 
 ```output
-{{ Add output here }}
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
 {{ Add description here }}
@@ -76,13 +91,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -EndIPAddress
+End IP address.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityFleetExpanded
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -FleetInputObject
 Identity Parameter
 To construct, see NOTES section for FLEETINPUTOBJECT properties and create a hash table.
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
-Parameter Sets: DeleteViaIdentityFleet
+Parameter Sets: CreateViaIdentityFleet, CreateViaIdentityFleetExpanded
 Aliases:
 
 Required: True
@@ -97,7 +127,7 @@ Name of the database fleet.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: CreateExpanded, CreateViaJsonFilePath, CreateViaJsonString
 Aliases:
 
 Required: True
@@ -107,13 +137,58 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -InputObject
-Identity Parameter
-To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+### -JsonFilePath
+Path of Json file supplied to the Create operation
 
 ```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
-Parameter Sets: DeleteViaIdentity
+Type: System.String
+Parameter Sets: CreateViaJsonFilePath
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -JsonString
+Json string supplied to the Create operation
+
+```yaml
+Type: System.String
+Parameter Sets: CreateViaJsonString
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Name
+Name of the firewall rule.
+
+```yaml
+Type: System.String
+Parameter Sets: (All)
+Aliases: FirewallRuleName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Parameter
+A SQL Database Fleet firewall rule.
+To construct, see NOTES section for PARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFirewallRule
+Parameter Sets: CreateViaIdentityFleet
 Aliases:
 
 Required: True
@@ -123,46 +198,31 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -Name
-Name of the authorized principal.
-
-```yaml
-Type: System.String
-Parameter Sets: Delete, DeleteViaIdentityFleet
-Aliases: AuthorizedPrincipalName
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -PassThru
-Returns true when the command succeeds
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ResourceGroupName
 Name of the resource group that contains the resource.
 You can obtain this value from the Azure Resource Manager API or the portal.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: CreateExpanded, CreateViaJsonFilePath, CreateViaJsonString
 Aliases:
 
 Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -StartIPAddress
+Start IP address.
+
+```yaml
+Type: System.String
+Parameter Sets: CreateExpanded, CreateViaIdentityFleetExpanded
+Aliases:
+
+Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -174,7 +234,7 @@ Subscription ID that identifies an Azure subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: CreateExpanded, CreateViaJsonFilePath, CreateViaJsonString
 Aliases:
 
 Required: False
@@ -222,9 +282,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
 
+### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFirewallRule
+
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFirewallRule
 
 ## NOTES
 

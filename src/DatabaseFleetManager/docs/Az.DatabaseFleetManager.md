@@ -17,14 +17,14 @@ Disables a tier.
 ### [Get-AzDatabaseFleetManagerAuthorizedPrincipal](Get-AzDatabaseFleetManagerAuthorizedPrincipal.md)
 Gets an authorized principal.
 
+### [Get-AzDatabaseFleetManagerDatabase](Get-AzDatabaseFleetManagerDatabase.md)
+Gets a fleet database.
+
 ### [Get-AzDatabaseFleetManagerFirewallRule](Get-AzDatabaseFleetManagerFirewallRule.md)
 Gets a firewall rule.
 
 ### [Get-AzDatabaseFleetManagerFleet](Get-AzDatabaseFleetManagerFleet.md)
 Gets a fleet resource.
-
-### [Get-AzDatabaseFleetManagerFleetDatabase](Get-AzDatabaseFleetManagerFleetDatabase.md)
-Gets a fleet database.
 
 ### [Get-AzDatabaseFleetManagerFleetspace](Get-AzDatabaseFleetManagerFleetspace.md)
 Gets fleetspace resource.
@@ -35,11 +35,29 @@ Gets a tier resource.
 ### [Invoke-AzDatabaseFleetManagerServerMigration](Invoke-AzDatabaseFleetManagerServerMigration.md)
 Migrates existing logical server into fleet.
 
-### [New-AzDatabaseFleetManagerFleetDatabase](New-AzDatabaseFleetManagerFleetDatabase.md)
-Creates or updates a fleet database.
+### [New-AzDatabaseFleetManagerAuthorizedPrincipal](New-AzDatabaseFleetManagerAuthorizedPrincipal.md)
+Create an authorized principal.
+
+### [New-AzDatabaseFleetManagerDatabase](New-AzDatabaseFleetManagerDatabase.md)
+Create a fleet database.
+
+### [New-AzDatabaseFleetManagerFirewallRule](New-AzDatabaseFleetManagerFirewallRule.md)
+Create a firewall rule.
+
+### [New-AzDatabaseFleetManagerFleet](New-AzDatabaseFleetManagerFleet.md)
+Create a fleet resource.
+
+### [New-AzDatabaseFleetManagerFleetspace](New-AzDatabaseFleetManagerFleetspace.md)
+Create a fleetspace resource.
+
+### [New-AzDatabaseFleetManagerFleetTier](New-AzDatabaseFleetManagerFleetTier.md)
+Create a tier.
 
 ### [Remove-AzDatabaseFleetManagerAuthorizedPrincipal](Remove-AzDatabaseFleetManagerAuthorizedPrincipal.md)
 Deletes an authorized principal.
+
+### [Remove-AzDatabaseFleetManagerDatabase](Remove-AzDatabaseFleetManagerDatabase.md)
+Deletes a fleet database.
 
 ### [Remove-AzDatabaseFleetManagerFirewallRule](Remove-AzDatabaseFleetManagerFirewallRule.md)
 Deletes a firewall rule.
@@ -47,18 +65,27 @@ Deletes a firewall rule.
 ### [Remove-AzDatabaseFleetManagerFleet](Remove-AzDatabaseFleetManagerFleet.md)
 Deletes a fleet.
 
-### [Remove-AzDatabaseFleetManagerFleetDatabase](Remove-AzDatabaseFleetManagerFleetDatabase.md)
-Deletes a fleet database.
-
 ### [Remove-AzDatabaseFleetManagerFleetspace](Remove-AzDatabaseFleetManagerFleetspace.md)
 Deletes a fleetspace.
 
-### [Rename-AzDatabaseFleetManagerFleetDatabaseTier](Rename-AzDatabaseFleetManagerFleetDatabaseTier.md)
+### [Rename-AzDatabaseFleetManagerDatabaseTier](Rename-AzDatabaseFleetManagerDatabaseTier.md)
 Moves database to a different tier.
+
+### [Update-AzDatabaseFleetManagerAuthorizedPrincipal](Update-AzDatabaseFleetManagerAuthorizedPrincipal.md)
+Create an authorized principal.
+
+### [Update-AzDatabaseFleetManagerDatabase](Update-AzDatabaseFleetManagerDatabase.md)
+Updates a fleet database.
+
+### [Update-AzDatabaseFleetManagerFirewallRule](Update-AzDatabaseFleetManagerFirewallRule.md)
+Create a firewall rule.
 
 ### [Update-AzDatabaseFleetManagerFleet](Update-AzDatabaseFleetManagerFleet.md)
 Modifies a fleet resource.
 
-### [Update-AzDatabaseFleetManagerFleetDatabase](Update-AzDatabaseFleetManagerFleetDatabase.md)
-Updates a fleet database.
+### [Update-AzDatabaseFleetManagerFleetspace](Update-AzDatabaseFleetManagerFleetspace.md)
+Create a fleetspace resource.
+
+### [Update-AzDatabaseFleetManagerFleetTier](Update-AzDatabaseFleetManagerFleetTier.md)
+Create a tier.
 

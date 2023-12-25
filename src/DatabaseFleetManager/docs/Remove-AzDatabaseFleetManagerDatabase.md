@@ -1,27 +1,45 @@
 ---
 external help file:
 Module Name: Az.DatabaseFleetManager
-online version: https://learn.microsoft.com/powershell/module/az.databasefleetmanager/new-azdatabasefleetmanagerfleetdatabase
+online version: https://learn.microsoft.com/powershell/module/az.databasefleetmanager/remove-azdatabasefleetmanagerdatabase
 schema: 2.0.0
 ---
 
-# New-AzDatabaseFleetManagerFleetDatabase
+# Remove-AzDatabaseFleetManagerDatabase
 
 ## SYNOPSIS
-Creates or updates a fleet database.
+Deletes a fleet database.
 
 ## SYNTAX
 
+### Delete (Default)
 ```
-New-AzDatabaseFleetManagerFleetDatabase -DatabaseName <String> -FleetName <String> -FleetspaceName <String>
- -ResourceGroupName <String> [-SubscriptionId <String>] [-AdditionalDbProperty <Hashtable>]
- [-CreateMode <DatabaseCreateMode>] [-Location <String>] [-NameSeed <String>] [-RestoreFromTime <DateTime>]
- [-SourceDatabaseName <String>] [-Tag <Hashtable>] [-TierName <String>] [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+Remove-AzDatabaseFleetManagerDatabase -FleetName <String> -FleetspaceName <String> -Name <String>
+ -ResourceGroupName <String> [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
+ [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### DeleteViaIdentity
+```
+Remove-AzDatabaseFleetManagerDatabase -InputObject <IDatabaseFleetManagerIdentity>
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### DeleteViaIdentityFleet
+```
+Remove-AzDatabaseFleetManagerDatabase -FleetInputObject <IDatabaseFleetManagerIdentity>
+ -FleetspaceName <String> -Name <String> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru]
+ [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### DeleteViaIdentityFleetspace
+```
+Remove-AzDatabaseFleetManagerDatabase -FleetspaceInputObject <IDatabaseFleetManagerIdentity> -Name <String>
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates or updates a fleet database.
+Deletes a fleet database.
 
 ## EXAMPLES
 
@@ -31,7 +49,7 @@ Creates or updates a fleet database.
 ```
 
 ```output
-{{ Add output here }}
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
 {{ Add description here }}
@@ -42,27 +60,12 @@ Creates or updates a fleet database.
 ```
 
 ```output
-{{ Add output here }}
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
 {{ Add description here }}
 
 ## PARAMETERS
-
-### -AdditionalDbProperty
-Dictionary of \<string\>
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -AsJob
 Run the command as a job
@@ -73,37 +76,6 @@ Parameter Sets: (All)
 Aliases:
 
 Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -CreateMode
-Create mode.
-Always default (To do, add modes).
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Support.DatabaseCreateMode
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DatabaseName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -126,27 +98,59 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -FleetInputObject
+Identity Parameter
+To construct, see NOTES section for FLEETINPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
+Parameter Sets: DeleteViaIdentityFleet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -FleetName
-.
+Name of the database fleet.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Delete
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -FleetspaceInputObject
+Identity Parameter
+To construct, see NOTES section for FLEETSPACEINPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
+Parameter Sets: DeleteViaIdentityFleetspace
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
 ### -FleetspaceName
-.
+Name of the fleetspace.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Delete, DeleteViaIdentityFleet
 Aliases:
 
 Required: True
@@ -156,30 +160,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Location
-.
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: (All)
+Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
+Parameter Sets: DeleteViaIdentity
 Aliases:
 
-Required: False
+Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -NameSeed
-Name seed for autogenerated names.
+### -Name
+Name of the database.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
-Aliases:
+Parameter Sets: Delete, DeleteViaIdentityFleet, DeleteViaIdentityFleetspace
+Aliases: DatabaseName
 
-Required: False
+Required: True
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -201,46 +206,31 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -PassThru
+Returns true when the command succeeds
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ResourceGroupName
 Name of the resource group that contains the resource.
 You can obtain this value from the Azure Resource Manager API or the portal.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Delete
 Aliases:
 
 Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -RestoreFromTime
-Restore from time when CreateMode is PointInTimeRestore.
-
-```yaml
-Type: System.DateTime
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -SourceDatabaseName
-Source database name used when CreateMode is Copy or PointInTimeRestore.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
 Position: Named
 Default value: None
 Accept pipeline input: False
@@ -252,42 +242,12 @@ Subscription ID that identifies an Azure subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: Delete
 Aliases:
 
 Required: False
 Position: Named
 Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -Tag
-Dictionary of \<string\>
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TierName
-Name of the tier this database belongs to.
-
-```yaml
-Type: System.String
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -328,9 +288,11 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
+
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.Api20230801Preview.IFleetDatabase
+### System.Boolean
 
 ## NOTES
 

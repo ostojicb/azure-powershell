@@ -30,6 +30,12 @@ Get-AzDatabaseFleetManagerFleetspace -InputObject <IDatabaseFleetManagerIdentity
  [<CommonParameters>]
 ```
 
+### GetViaIdentityFleet
+```
+Get-AzDatabaseFleetManagerFleetspace -FleetInputObject <IDatabaseFleetManagerIdentity> -Name <String>
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 Gets fleetspace resource.
 
@@ -75,8 +81,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -FleetInputObject
+Identity Parameter
+To construct, see NOTES section for FLEETINPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
+Parameter Sets: GetViaIdentityFleet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -FleetName
-.
+Name of the database fleet.
 
 ```yaml
 Type: System.String
@@ -107,11 +129,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-.
+Name of the fleetspace.
 
 ```yaml
 Type: System.String
-Parameter Sets: Get
+Parameter Sets: Get, GetViaIdentityFleet
 Aliases: FleetspaceName
 
 Required: True
@@ -161,9 +183,9 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## OUTPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.Api20230801Preview.IFleetspace
+### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleetspace
 
-### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.Api20230801Preview.IFleetspaceListResult
+### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleetspaceListResult
 
 ## NOTES
 

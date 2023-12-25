@@ -49,49 +49,6 @@
       ]
     },
     {
-      "name": "Invoke-AzDatabaseFleetManagerServerMigration",
-      "description": "Migrates existing logical server into fleet.",
-      "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/fleetspaces/{fleetspaceName}/migrateServer",
-      "help": {
-        "learnMore": {
-          "url": "https://learn.microsoft.com/powershell/module/az.databasefleetmanager/invoke-azdatabasefleetmanagerservermigration"
-        },
-        "parameterSets": [
-          {
-            "parameters": [
-              "-FleetName <String>",
-              "-FleetspaceName <String>",
-              "-ResourceGroupName <String>",
-              "[-SubscriptionId <String>]"
-            ]
-          }
-        ]
-      },
-      "examples": [
-        {
-          "description": "Migrates existing logical server into fleet.",
-          "parameters": [
-            {
-              "name": "-FleetName",
-              "value": "[Path.fleetName]"
-            },
-            {
-              "name": "-FleetspaceName",
-              "value": "[Path.fleetspaceName]"
-            },
-            {
-              "name": "-ResourceGroupName",
-              "value": "[Path.resourceGroupName]"
-            },
-            {
-              "name": "-SubscriptionId",
-              "value": "[Path.subscriptionId]"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "Remove-AzDatabaseFleetManagerFleetspace",
       "description": "Deletes a fleetspace.",
       "path": "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/fleetspaces/{fleetspaceName}",

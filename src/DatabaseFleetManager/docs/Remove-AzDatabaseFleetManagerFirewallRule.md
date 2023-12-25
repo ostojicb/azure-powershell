@@ -24,6 +24,12 @@ Remove-AzDatabaseFleetManagerFirewallRule -InputObject <IDatabaseFleetManagerIde
  [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
+### DeleteViaIdentityFleet
+```
+Remove-AzDatabaseFleetManagerFirewallRule -FleetInputObject <IDatabaseFleetManagerIdentity> -Name <String>
+ [-DefaultProfile <PSObject>] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
 ## DESCRIPTION
 Deletes a firewall rule.
 
@@ -69,8 +75,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -FleetInputObject
+Identity Parameter
+To construct, see NOTES section for FLEETINPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
+Parameter Sets: DeleteViaIdentityFleet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
 ### -FleetName
-.
+Name of the database fleet.
 
 ```yaml
 Type: System.String
@@ -101,11 +123,11 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-.
+Name of the firewall rule.
 
 ```yaml
 Type: System.String
-Parameter Sets: Delete
+Parameter Sets: Delete, DeleteViaIdentityFleet
 Aliases: FirewallRuleName
 
 Required: True

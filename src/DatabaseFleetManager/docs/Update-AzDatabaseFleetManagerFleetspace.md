@@ -1,48 +1,44 @@
 ---
 external help file:
 Module Name: Az.DatabaseFleetManager
-online version: https://learn.microsoft.com/powershell/module/az.databasefleetmanager/rename-azdatabasefleetmanagerfleetdatabasetier
+online version: https://learn.microsoft.com/powershell/module/az.databasefleetmanager/update-azdatabasefleetmanagerfleetspace
 schema: 2.0.0
 ---
 
-# Rename-AzDatabaseFleetManagerFleetDatabaseTier
+# Update-AzDatabaseFleetManagerFleetspace
 
 ## SYNOPSIS
-Moves database to a different tier.
+Create a fleetspace resource.
 
 ## SYNTAX
 
-### ChangeExpanded (Default)
+### UpdateExpanded (Default)
 ```
-Rename-AzDatabaseFleetManagerFleetDatabaseTier -DatabaseName <String> -FleetName <String>
- -FleetspaceName <String> -ResourceGroupName <String> [-SubscriptionId <String>] [-TargetTierName <String>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
-```
-
-### Change
-```
-Rename-AzDatabaseFleetManagerFleetDatabaseTier -DatabaseName <String> -FleetName <String>
- -FleetspaceName <String> -ResourceGroupName <String> -Parameter <IDatabaseMoveDefinition>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
+Update-AzDatabaseFleetManagerFleetspace -FleetName <String> -Name <String> -ResourceGroupName <String>
+ [-SubscriptionId <String>] [-Property <IAny>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf]
  [<CommonParameters>]
 ```
 
-### ChangeViaIdentity
+### UpdateViaIdentityExpanded
 ```
-Rename-AzDatabaseFleetManagerFleetDatabaseTier -InputObject <IDatabaseFleetManagerIdentity>
- -Parameter <IDatabaseMoveDefinition> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-AzDatabaseFleetManagerFleetspace -InputObject <IDatabaseFleetManagerIdentity> [-Property <IAny>]
+ [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
-### ChangeViaIdentityExpanded
+### UpdateViaIdentityFleet
 ```
-Rename-AzDatabaseFleetManagerFleetDatabaseTier -InputObject <IDatabaseFleetManagerIdentity>
- [-TargetTierName <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Update-AzDatabaseFleetManagerFleetspace -FleetInputObject <IDatabaseFleetManagerIdentity> -Name <String>
+ -Parameter <IFleetspace> [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentityFleetExpanded
+```
+Update-AzDatabaseFleetManagerFleetspace -FleetInputObject <IDatabaseFleetManagerIdentity> -Name <String>
+ [-Property <IAny>] [-DefaultProfile <PSObject>] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Moves database to a different tier.
+Create a fleetspace resource.
 
 ## EXAMPLES
 
@@ -52,7 +48,7 @@ Moves database to a different tier.
 ```
 
 ```output
-{{ Add output here }}
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
 {{ Add description here }}
@@ -63,42 +59,12 @@ Moves database to a different tier.
 ```
 
 ```output
-{{ Add output here }}
+{{ Add output here (remove the output block if the example doesn't have an output) }}
 ```
 
 {{ Add description here }}
 
 ## PARAMETERS
-
-### -AsJob
-Run the command as a job
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -DatabaseName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: Change, ChangeExpanded
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
 
 ### -DefaultProfile
 The DefaultProfile parameter is not functional.
@@ -116,27 +82,28 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -FleetName
-.
+### -FleetInputObject
+Identity Parameter
+To construct, see NOTES section for FLEETINPUTOBJECT properties and create a hash table.
 
 ```yaml
-Type: System.String
-Parameter Sets: Change, ChangeExpanded
+Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
+Parameter Sets: UpdateViaIdentityFleet, UpdateViaIdentityFleetExpanded
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -FleetspaceName
-.
+### -FleetName
+Name of the database fleet.
 
 ```yaml
 Type: System.String
-Parameter Sets: Change, ChangeExpanded
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -152,7 +119,7 @@ To construct, see NOTES section for INPUTOBJECT properties and create a hash tab
 
 ```yaml
 Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
-Parameter Sets: ChangeViaIdentity, ChangeViaIdentityExpanded
+Parameter Sets: UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
@@ -162,12 +129,43 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### -NoWait
-Run the command asynchronously
+### -Name
+Name of the fleetspace.
 
 ```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
+Type: System.String
+Parameter Sets: UpdateExpanded, UpdateViaIdentityFleet, UpdateViaIdentityFleetExpanded
+Aliases: FleetspaceName
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -Parameter
+A SQL Database Fleetspace.
+To construct, see NOTES section for PARAMETER properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleetspace
+Parameter Sets: UpdateViaIdentityFleet
+Aliases:
+
+Required: True
+Position: Named
+Default value: None
+Accept pipeline input: True (ByValue)
+Accept wildcard characters: False
+```
+
+### -Property
+A Fleetspace properties.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IAny
+Parameter Sets: UpdateExpanded, UpdateViaIdentityExpanded, UpdateViaIdentityFleetExpanded
 Aliases:
 
 Required: False
@@ -177,29 +175,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Parameter
-.
-To construct, see NOTES section for PARAMETER properties and create a hash table.
-
-```yaml
-Type: Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.Api20230801Preview.IDatabaseMoveDefinition
-Parameter Sets: Change, ChangeViaIdentity
-Aliases:
-
-Required: True
-Position: Named
-Default value: None
-Accept pipeline input: True (ByValue)
-Accept wildcard characters: False
-```
-
 ### -ResourceGroupName
 Name of the resource group that contains the resource.
 You can obtain this value from the Azure Resource Manager API or the portal.
 
 ```yaml
 Type: System.String
-Parameter Sets: Change, ChangeExpanded
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -214,27 +196,12 @@ Subscription ID that identifies an Azure subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: Change, ChangeExpanded
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
 Position: Named
 Default value: (Get-AzContext).Subscription.Id
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -TargetTierName
-.
-
-```yaml
-Type: System.String
-Parameter Sets: ChangeExpanded, ChangeViaIdentityExpanded
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
 Accept pipeline input: False
 Accept wildcard characters: False
 ```
@@ -275,13 +242,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
-### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.Api20230801Preview.IDatabaseMoveDefinition
-
 ### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IDatabaseFleetManagerIdentity
+
+### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleetspace
 
 ## OUTPUTS
 
-### System.Boolean
+### Microsoft.Azure.PowerShell.Cmdlets.DatabaseFleetManager.Models.IFleetspace
 
 ## NOTES
 

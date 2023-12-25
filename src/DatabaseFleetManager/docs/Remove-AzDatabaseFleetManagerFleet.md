@@ -101,7 +101,7 @@ Accept wildcard characters: False
 ```
 
 ### -Name
-.
+Name of the database fleet.
 
 ```yaml
 Type: System.String
