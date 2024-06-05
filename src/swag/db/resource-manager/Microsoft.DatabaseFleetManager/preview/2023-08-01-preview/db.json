@@ -27,18 +27,10 @@
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "authorizedPrincipalName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/AuthorizedPrincipalNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -64,9 +56,6 @@
         "x-ms-examples": {
           "AuthorizedPrincipals_Get_MaximumSet_Gen": {
             "$ref": "./examples/AuthorizedPrincipals_Get_MaximumSet_Gen.json"
-          },
-          "AuthorizedPrincipals_Get_MinimumSet_Gen": {
-            "$ref": "./examples/AuthorizedPrincipals_Get_MinimumSet_Gen.json"
           }
         }
       },
@@ -75,24 +64,16 @@
           "AuthorizedPrincipals"
         ],
         "description": "Creates or updates an authorized principal.",
-        "operationId": "AuthorizedPrincipals_Put",
+        "operationId": "AuthorizedPrincipals_CreateOrUpdate",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "authorizedPrincipalName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/AuthorizedPrincipalNameParameter"
           },
           {
             "name": "parameters",
@@ -130,11 +111,8 @@
           }
         },
         "x-ms-examples": {
-          "AuthorizedPrincipals_Put_MaximumSet_Gen": {
-            "$ref": "./examples/AuthorizedPrincipals_Put_MaximumSet_Gen.json"
-          },
-          "AuthorizedPrincipals_Put_MinimumSet_Gen": {
-            "$ref": "./examples/AuthorizedPrincipals_Put_MinimumSet_Gen.json"
+          "AuthorizedPrincipals_CreateOrUpdate_MaximumSet_Gen": {
+            "$ref": "./examples/AuthorizedPrincipals_CreateOrUpdate_MaximumSet_Gen.json"
           }
         }
       },
@@ -149,18 +127,10 @@
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "authorizedPrincipalName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/AuthorizedPrincipalNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -186,9 +156,6 @@
         "x-ms-examples": {
           "AuthorizedPrincipals_Delete_MaximumSet_Gen": {
             "$ref": "./examples/AuthorizedPrincipals_Delete_MaximumSet_Gen.json"
-          },
-          "AuthorizedPrincipals_Delete_MinimumSet_Gen": {
-            "$ref": "./examples/AuthorizedPrincipals_Delete_MinimumSet_Gen.json"
           }
         }
       }
@@ -199,17 +166,13 @@
           "AuthorizedPrincipals"
         ],
         "description": "Gets all authorized principals in a fleet.",
-        "operationId": "AuthorizedPrincipals_List",
+        "operationId": "AuthorizedPrincipals_ListByFleet",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -233,11 +196,8 @@
           }
         },
         "x-ms-examples": {
-          "AuthorizedPrincipals_List_MaximumSet_Gen": {
-            "$ref": "./examples/AuthorizedPrincipals_List_MaximumSet_Gen.json"
-          },
-          "AuthorizedPrincipals_List_MinimumSet_Gen": {
-            "$ref": "./examples/AuthorizedPrincipals_List_MinimumSet_Gen.json"
+          "AuthorizedPrincipals_ListByFleet_MaximumSet_Gen": {
+            "$ref": "./examples/AuthorizedPrincipals_ListByFleet_MaximumSet_Gen.json"
           }
         }
       }
@@ -254,18 +214,10 @@
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "firewallRuleName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FirewallRuleNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -291,9 +243,6 @@
         "x-ms-examples": {
           "FirewallRules_Get_MaximumSet_Gen": {
             "$ref": "./examples/FirewallRules_Get_MaximumSet_Gen.json"
-          },
-          "FirewallRules_Get_MinimumSet_Gen": {
-            "$ref": "./examples/FirewallRules_Get_MinimumSet_Gen.json"
           }
         }
       },
@@ -302,24 +251,16 @@
           "FirewallRules"
         ],
         "description": "Creates or updates a firewall rule.",
-        "operationId": "FirewallRules_Put",
+        "operationId": "FirewallRules_CreateOrUpdate",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "firewallRuleName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FirewallRuleNameParameter"
           },
           {
             "name": "parameters",
@@ -357,11 +298,8 @@
           }
         },
         "x-ms-examples": {
-          "FirewallRules_Put_MaximumSet_Gen": {
-            "$ref": "./examples/FirewallRules_Put_MaximumSet_Gen.json"
-          },
-          "FirewallRules_Put_MinimumSet_Gen": {
-            "$ref": "./examples/FirewallRules_Put_MinimumSet_Gen.json"
+          "FirewallRules_CreateOrUpdate_MaximumSet_Gen": {
+            "$ref": "./examples/FirewallRules_CreateOrUpdate_MaximumSet_Gen.json"
           }
         }
       },
@@ -376,18 +314,10 @@
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "firewallRuleName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FirewallRuleNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -413,9 +343,6 @@
         "x-ms-examples": {
           "FirewallRules_Delete_MaximumSet_Gen": {
             "$ref": "./examples/FirewallRules_Delete_MaximumSet_Gen.json"
-          },
-          "FirewallRules_Delete_MinimumSet_Gen": {
-            "$ref": "./examples/FirewallRules_Delete_MinimumSet_Gen.json"
           }
         }
       }
@@ -426,17 +353,13 @@
           "FirewallRules"
         ],
         "description": "Gets all firewall rules in a fleet.",
-        "operationId": "FirewallRules_List",
+        "operationId": "FirewallRules_ListByFleet",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -460,11 +383,8 @@
           }
         },
         "x-ms-examples": {
-          "FirewallRules_List_MaximumSet_Gen": {
-            "$ref": "./examples/FirewallRules_List_MaximumSet_Gen.json"
-          },
-          "FirewallRules_List_MinimumSet_Gen": {
-            "$ref": "./examples/FirewallRules_List_MinimumSet_Gen.json"
+          "FirewallRules_ListByFleet_MaximumSet_Gen": {
+            "$ref": "./examples/FirewallRules_ListByFleet_MaximumSet_Gen.json"
           }
         }
       }
@@ -472,34 +392,22 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/fleetspaces/{fleetspaceName}/databases/{databaseName}/changeTier": {
       "post": {
         "tags": [
-          "FleetDatabase"
+          "Databases"
         ],
         "description": "Moves database to a different tier.",
-        "operationId": "FleetDatabase_ChangeTier",
+        "operationId": "Databases_ChangeTier",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "fleetspaceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetspaceNameParameter"
           },
           {
-            "name": "databaseName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/DatabaseNameParameter"
           },
           {
             "name": "parameters",
@@ -537,11 +445,8 @@
           "final-state-via": "location"
         },
         "x-ms-examples": {
-          "FleetDatabase_ChangeTier_MaximumSet_Gen": {
-            "$ref": "./examples/FleetDatabase_ChangeTier_MaximumSet_Gen.json"
-          },
-          "FleetDatabase_ChangeTier_MinimumSet_Gen": {
-            "$ref": "./examples/FleetDatabase_ChangeTier_MinimumSet_Gen.json"
+          "Databases_ChangeTier_MaximumSet_Gen": {
+            "$ref": "./examples/Databases_ChangeTier_MaximumSet_Gen.json"
           }
         }
       }
@@ -549,34 +454,22 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/fleetspaces/{fleetspaceName}/databases/{databaseName}": {
       "get": {
         "tags": [
-          "FleetDatabase"
+          "Databases"
         ],
         "description": "Gets a fleet database.",
-        "operationId": "FleetDatabase_GetDatabase",
+        "operationId": "Databases_Get",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "fleetspaceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetspaceNameParameter"
           },
           {
-            "name": "databaseName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/DatabaseNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -600,44 +493,29 @@
           }
         },
         "x-ms-examples": {
-          "FleetDatabase_GetDatabase_MaximumSet_Gen": {
-            "$ref": "./examples/FleetDatabase_GetDatabase_MaximumSet_Gen.json"
-          },
-          "FleetDatabase_GetDatabase_MinimumSet_Gen": {
-            "$ref": "./examples/FleetDatabase_GetDatabase_MinimumSet_Gen.json"
+          "Databases_Get_MaximumSet_Gen": {
+            "$ref": "./examples/Databases_Get_MaximumSet_Gen.json"
           }
         }
       },
       "put": {
         "tags": [
-          "FleetDatabase"
+          "Databases"
         ],
         "description": "Creates or updates a fleet database.",
-        "operationId": "FleetDatabase_CreateDatabase",
+        "operationId": "Databases_CreateOrUpdate",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "fleetspaceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetspaceNameParameter"
           },
           {
-            "name": "databaseName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/DatabaseNameParameter"
           },
           {
             "name": "parameters",
@@ -679,44 +557,29 @@
           "final-state-via": "azure-async-operation"
         },
         "x-ms-examples": {
-          "FleetDatabase_CreateDatabase_MaximumSet_Gen": {
-            "$ref": "./examples/FleetDatabase_CreateDatabase_MaximumSet_Gen.json"
-          },
-          "FleetDatabase_CreateDatabase_MinimumSet_Gen": {
-            "$ref": "./examples/FleetDatabase_CreateDatabase_MinimumSet_Gen.json"
+          "Databases_CreateOrUpdate_MaximumSet_Gen": {
+            "$ref": "./examples/Databases_CreateOrUpdate_MaximumSet_Gen.json"
           }
         }
       },
       "delete": {
         "tags": [
-          "FleetDatabase"
+          "Databases"
         ],
         "description": "Deletes a fleet database.",
-        "operationId": "FleetDatabase_DeleteDatabase",
+        "operationId": "Databases_Delete",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "fleetspaceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetspaceNameParameter"
           },
           {
-            "name": "databaseName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/DatabaseNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -749,44 +612,29 @@
           "final-state-via": "location"
         },
         "x-ms-examples": {
-          "FleetDatabase_DeleteDatabase_MaximumSet_Gen": {
-            "$ref": "./examples/FleetDatabase_DeleteDatabase_MaximumSet_Gen.json"
-          },
-          "FleetDatabase_DeleteDatabase_MinimumSet_Gen": {
-            "$ref": "./examples/FleetDatabase_DeleteDatabase_MinimumSet_Gen.json"
+          "Databases_Delete_MaximumSet_Gen": {
+            "$ref": "./examples/Databases_Delete_MaximumSet_Gen.json"
           }
         }
       },
       "patch": {
         "tags": [
-          "FleetDatabase"
+          "Databases"
         ],
         "description": "Updates a fleet database.",
-        "operationId": "FleetDatabase_PatchDatabase",
+        "operationId": "Databases_Update",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "fleetspaceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetspaceNameParameter"
           },
           {
-            "name": "databaseName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/DatabaseNameParameter"
           },
           {
             "name": "parameters",
@@ -830,11 +678,8 @@
           "final-state-via": "azure-async-operation"
         },
         "x-ms-examples": {
-          "FleetDatabase_PatchDatabase_MaximumSet_Gen": {
-            "$ref": "./examples/FleetDatabase_PatchDatabase_MaximumSet_Gen.json"
-          },
-          "FleetDatabase_PatchDatabase_MinimumSet_Gen": {
-            "$ref": "./examples/FleetDatabase_PatchDatabase_MinimumSet_Gen.json"
+          "Databases_Update_MaximumSet_Gen": {
+            "$ref": "./examples/Databases_Update_MaximumSet_Gen.json"
           }
         }
       }
@@ -842,27 +687,19 @@
     "/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DatabaseFleetManager/fleets/{fleetName}/fleetspaces/{fleetspaceName}/databases": {
       "get": {
         "tags": [
-          "FleetDatabase"
+          "Databases"
         ],
         "description": "Gets all fleet databases in a fleetspace.",
-        "operationId": "FleetDatabase_GetDatabases",
+        "operationId": "Databases_ListByFleetspace",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "fleetspaceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetspaceNameParameter"
           },
           {
             "name": "$skip",
@@ -920,11 +757,8 @@
           "nextLinkName": "nextLink"
         },
         "x-ms-examples": {
-          "FleetDatabase_GetDatabases_MaximumSet_Gen": {
-            "$ref": "./examples/FleetDatabase_GetDatabases_MaximumSet_Gen.json"
-          },
-          "FleetDatabase_GetDatabases_MinimumSet_Gen": {
-            "$ref": "./examples/FleetDatabase_GetDatabases_MinimumSet_Gen.json"
+          "Databases_ListByFleetspace_MaximumSet_Gen": {
+            "$ref": "./examples/Databases_ListByFleetspace_MaximumSet_Gen.json"
           }
         }
       }
@@ -935,7 +769,7 @@
           "Fleets"
         ],
         "description": "Gets all fleets in a resource group.",
-        "operationId": "Fleets_ListInResourceGroup",
+        "operationId": "Fleets_ListByResourceGroup",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
@@ -962,11 +796,8 @@
           }
         },
         "x-ms-examples": {
-          "Fleets_ListInResourceGroup_MaximumSet_Gen": {
-            "$ref": "./examples/Fleets_ListInResourceGroup_MaximumSet_Gen.json"
-          },
-          "Fleets_ListInResourceGroup_MinimumSet_Gen": {
-            "$ref": "./examples/Fleets_ListInResourceGroup_MinimumSet_Gen.json"
+          "Fleets_ListByResourceGroup_MaximumSet_Gen": {
+            "$ref": "./examples/Fleets_ListByResourceGroup_MaximumSet_Gen.json"
           }
         }
       }
@@ -983,11 +814,7 @@
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -1013,9 +840,6 @@
         "x-ms-examples": {
           "Fleets_Get_MaximumSet_Gen": {
             "$ref": "./examples/Fleets_Get_MaximumSet_Gen.json"
-          },
-          "Fleets_Get_MinimumSet_Gen": {
-            "$ref": "./examples/Fleets_Get_MinimumSet_Gen.json"
           }
         }
       },
@@ -1024,17 +848,13 @@
           "Fleets"
         ],
         "description": "Creates or updates a fleet resource.",
-        "operationId": "Fleets_Put",
+        "operationId": "Fleets_CreateOrUpdate",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
             "name": "parameters",
@@ -1072,11 +892,8 @@
           }
         },
         "x-ms-examples": {
-          "Fleets_Put_MaximumSet_Gen": {
-            "$ref": "./examples/Fleets_Put_MaximumSet_Gen.json"
-          },
-          "Fleets_Put_MinimumSet_Gen": {
-            "$ref": "./examples/Fleets_Put_MinimumSet_Gen.json"
+          "Fleets_CreateOrUpdate_MaximumSet_Gen": {
+            "$ref": "./examples/Fleets_CreateOrUpdate_MaximumSet_Gen.json"
           }
         }
       },
@@ -1091,11 +908,7 @@
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -1130,9 +943,6 @@
         "x-ms-examples": {
           "Fleets_Delete_MaximumSet_Gen": {
             "$ref": "./examples/Fleets_Delete_MaximumSet_Gen.json"
-          },
-          "Fleets_Delete_MinimumSet_Gen": {
-            "$ref": "./examples/Fleets_Delete_MinimumSet_Gen.json"
           }
         }
       },
@@ -1147,11 +957,7 @@
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
             "name": "parameters",
@@ -1185,9 +991,6 @@
         "x-ms-examples": {
           "Fleets_Patch_MaximumSet_Gen": {
             "$ref": "./examples/Fleets_Patch_MaximumSet_Gen.json"
-          },
-          "Fleets_Patch_MinimumSet_Gen": {
-            "$ref": "./examples/Fleets_Patch_MinimumSet_Gen.json"
           }
         }
       }
@@ -1198,7 +1001,7 @@
           "Fleets"
         ],
         "description": "Gets all fleets in a subscription.",
-        "operationId": "Fleets_List",
+        "operationId": "Fleets_ListBySubscription",
         "parameters": [
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -1222,11 +1025,8 @@
           }
         },
         "x-ms-examples": {
-          "Fleets_List_MaximumSet_Gen": {
-            "$ref": "./examples/Fleets_List_MaximumSet_Gen.json"
-          },
-          "Fleets_List_MinimumSet_Gen": {
-            "$ref": "./examples/Fleets_List_MinimumSet_Gen.json"
+          "Fleets_ListBySubscription_MaximumSet_Gen": {
+            "$ref": "./examples/Fleets_ListBySubscription_MaximumSet_Gen.json"
           }
         }
       }
@@ -1243,18 +1043,10 @@
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "fleetspaceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetspaceNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -1280,9 +1072,6 @@
         "x-ms-examples": {
           "Fleetspaces_Get_MaximumSet_Gen": {
             "$ref": "./examples/Fleetspaces_Get_MaximumSet_Gen.json"
-          },
-          "Fleetspaces_Get_MinimumSet_Gen": {
-            "$ref": "./examples/Fleetspaces_Get_MinimumSet_Gen.json"
           }
         }
       },
@@ -1291,24 +1080,16 @@
           "Fleetspaces"
         ],
         "description": "Creates or updates a fleetspace resource.",
-        "operationId": "Fleetspaces_Put",
+        "operationId": "Fleetspaces_CreateOrUpdate",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "fleetspaceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetspaceNameParameter"
           },
           {
             "name": "parameters",
@@ -1346,11 +1127,8 @@
           }
         },
         "x-ms-examples": {
-          "Fleetspaces_Put_MaximumSet_Gen": {
-            "$ref": "./examples/Fleetspaces_Put_MaximumSet_Gen.json"
-          },
-          "Fleetspaces_Put_MinimumSet_Gen": {
-            "$ref": "./examples/Fleetspaces_Put_MinimumSet_Gen.json"
+          "Fleetspaces_CreateOrUpdate_MaximumSet_Gen": {
+            "$ref": "./examples/Fleetspaces_CreateOrUpdate_MaximumSet_Gen.json"
           }
         }
       },
@@ -1365,18 +1143,10 @@
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "fleetspaceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetspaceNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -1411,9 +1181,6 @@
         "x-ms-examples": {
           "Fleetspaces_Delete_MaximumSet_Gen": {
             "$ref": "./examples/Fleetspaces_Delete_MaximumSet_Gen.json"
-          },
-          "Fleetspaces_Delete_MinimumSet_Gen": {
-            "$ref": "./examples/Fleetspaces_Delete_MinimumSet_Gen.json"
           }
         }
       }
@@ -1424,17 +1191,13 @@
           "Fleetspaces"
         ],
         "description": "Lists fleetspaces in a fleet.",
-        "operationId": "Fleetspaces_List",
+        "operationId": "Fleetspaces_ListByFleet",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -1458,11 +1221,8 @@
           }
         },
         "x-ms-examples": {
-          "Fleetspaces_List_MaximumSet_Gen": {
-            "$ref": "./examples/Fleetspaces_List_MaximumSet_Gen.json"
-          },
-          "Fleetspaces_List_MinimumSet_Gen": {
-            "$ref": "./examples/Fleetspaces_List_MinimumSet_Gen.json"
+          "Fleetspaces_ListByFleet_MaximumSet_Gen": {
+            "$ref": "./examples/Fleetspaces_ListByFleet_MaximumSet_Gen.json"
           }
         }
       }
@@ -1479,18 +1239,10 @@
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "tierName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/TierNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -1516,9 +1268,6 @@
         "x-ms-examples": {
           "FleetTiers_Get_MaximumSet_Gen": {
             "$ref": "./examples/FleetTiers_Get_MaximumSet_Gen.json"
-          },
-          "FleetTiers_Get_MinimumSet_Gen": {
-            "$ref": "./examples/FleetTiers_Get_MinimumSet_Gen.json"
           }
         }
       },
@@ -1527,24 +1276,16 @@
           "FleetTiers"
         ],
         "description": "Creates or updates a tier.",
-        "operationId": "FleetTiers_Put",
+        "operationId": "FleetTiers_CreateOrUpdate",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "tierName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/TierNameParameter"
           },
           {
             "name": "parameters",
@@ -1582,11 +1323,8 @@
           }
         },
         "x-ms-examples": {
-          "FleetTiers_Put_MaximumSet_Gen": {
-            "$ref": "./examples/FleetTiers_Put_MaximumSet_Gen.json"
-          },
-          "FleetTiers_Put_MinimumSet_Gen": {
-            "$ref": "./examples/FleetTiers_Put_MinimumSet_Gen.json"
+          "FleetTiers_CreateOrUpdate_MaximumSet_Gen": {
+            "$ref": "./examples/FleetTiers_CreateOrUpdate_MaximumSet_Gen.json"
           }
         }
       }
@@ -1597,17 +1335,13 @@
           "FleetTiers"
         ],
         "description": "List tiers in a fleet.",
-        "operationId": "FleetTiers_List",
+        "operationId": "FleetTiers_ListByFleet",
         "parameters": [
           {
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -1631,11 +1365,8 @@
           }
         },
         "x-ms-examples": {
-          "FleetTiers_List_MaximumSet_Gen": {
-            "$ref": "./examples/FleetTiers_List_MaximumSet_Gen.json"
-          },
-          "FleetTiers_List_MinimumSet_Gen": {
-            "$ref": "./examples/FleetTiers_List_MinimumSet_Gen.json"
+          "FleetTiers_ListByFleet_MaximumSet_Gen": {
+            "$ref": "./examples/FleetTiers_ListByFleet_MaximumSet_Gen.json"
           }
         }
       }
@@ -1652,18 +1383,10 @@
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "tierName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/TierNameParameter"
           },
           {
             "$ref": "#/parameters/SubscriptionIdParameter"
@@ -1689,9 +1412,6 @@
         "x-ms-examples": {
           "FleetTiers_Disable_MaximumSet_Gen": {
             "$ref": "./examples/FleetTiers_Disable_MaximumSet_Gen.json"
-          },
-          "FleetTiers_Disable_MinimumSet_Gen": {
-            "$ref": "./examples/FleetTiers_Disable_MinimumSet_Gen.json"
           }
         }
       }
@@ -1708,18 +1428,10 @@
             "$ref": "#/parameters/ResourceGroupParameter"
           },
           {
-            "name": "fleetName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetNameParameter"
           },
           {
-            "name": "fleetspaceName",
-            "in": "path",
-            "required": true,
-            "type": "string",
-            "pattern": "^(?!.*--)[a-z0-9]+(?:-[a-z0-9]+)*$"
+            "$ref": "#/parameters/FleetspaceNameParameter"
           },
           {
             "name": "parameters",
@@ -1759,9 +1471,6 @@
         "x-ms-examples": {
           "Migrations_Server_MaximumSet_Gen": {
             "$ref": "./examples/Migrations_Server_MaximumSet_Gen.json"
-          },
-          "Migrations_Server_MinimumSet_Gen": {
-            "$ref": "./examples/Migrations_Server_MinimumSet_Gen.json"
           }
         }
       }
@@ -1798,9 +1507,6 @@
         "x-ms-examples": {
           "Operations_List_MaximumSet_Gen": {
             "$ref": "./examples/Operations_List_MaximumSet_Gen.json"
-          },
-          "Operations_List_MinimumSet_Gen": {
-            "$ref": "./examples/Operations_List_MinimumSet_Gen.json"
           }
         }
       }
@@ -1811,6 +1517,7 @@
       "type": "object",
       "properties": {
         "applicationId": {
+          "format": "uuid",
           "description": "Application Id of the authorized principal.",
           "type": "string",
           "x-ms-mutability": [
@@ -1819,6 +1526,7 @@
           ]
         },
         "objectId": {
+          "format": "uuid",
           "description": "Object Id of the authorized principal.",
           "type": "string",
           "x-ms-mutability": [
@@ -1827,6 +1535,7 @@
           ]
         },
         "tenantId": {
+          "format": "uuid",
           "description": "Tenant Id of the authorized principal.",
           "type": "string",
           "x-ms-mutability": [
@@ -1876,39 +1585,12 @@
         }
       }
     },
-    "Resource": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "string",
-          "readOnly": true
-        },
-        "name": {
-          "type": "string",
-          "readOnly": true
-        },
-        "type": {
-          "type": "string",
-          "readOnly": true
-        }
-      },
-      "x-ms-azure-resource": true
-    },
-    "ProxyResource": {
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/Resource"
-        }
-      ],
-      "properties": {}
-    },
     "AuthorizedPrincipal": {
       "description": "A database fleet manager authorized principal.",
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ProxyResource"
+          "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ProxyResource"
         }
       ],
       "properties": {
@@ -1961,7 +1643,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ProxyResource"
+          "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ProxyResource"
         }
       ],
       "properties": {
@@ -1999,14 +1681,6 @@
       "description": "The SQL Database Fleet properties.",
       "type": "object",
       "properties": {
-        "nameSeed": {
-          "description": "Name seed for autogenerated names.",
-          "type": "string",
-          "x-ms-mutability": [
-            "read",
-            "create"
-          ]
-        },
         "originalDatabaseId": {
           "description": "Resource identifier for the underlying database resource.",
           "type": "string",
@@ -2093,30 +1767,7 @@
             "create"
           ]
         },
-        "additionalDbProperties": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          }
-        }
-      }
-    },
-    "TrackedResource": {
-      "type": "object",
-      "allOf": [
-        {
-          "$ref": "#/definitions/Resource"
-        }
-      ],
-      "properties": {
-        "location": {
-          "type": "string",
-          "x-ms-mutability": [
-            "read",
-            "create"
-          ]
-        },
-        "tags": {
+        "resourceTags": {
           "type": "object",
           "additionalProperties": {
             "type": "string"
@@ -2129,7 +1780,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/TrackedResource"
+          "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ProxyResource"
         }
       ],
       "properties": {
@@ -2201,6 +1852,7 @@
       "type": "object",
       "properties": {
         "applicationId": {
+          "format": "uuid",
           "description": "Application Id of the main principal.",
           "type": "string",
           "x-ms-mutability": [
@@ -2209,6 +1861,7 @@
           ]
         },
         "objectId": {
+          "format": "uuid",
           "description": "Object Id of the main principal.",
           "type": "string",
           "x-ms-mutability": [
@@ -2217,6 +1870,7 @@
           ]
         },
         "tenantId": {
+          "format": "uuid",
           "description": "Tenant Id of the main principal.",
           "type": "string",
           "x-ms-mutability": [
@@ -2246,7 +1900,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/TrackedResource"
+          "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/TrackedResource"
         }
       ],
       "properties": {
@@ -2265,7 +1919,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ProxyResource"
+          "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ProxyResource"
         }
       ],
       "properties": {
@@ -2393,7 +2047,7 @@
       "type": "object",
       "allOf": [
         {
-          "$ref": "#/definitions/ProxyResource"
+          "$ref": "../../../../../common-types/resource-management/v5/types.json#/definitions/ProxyResource"
         }
       ],
       "properties": {
@@ -2426,6 +2080,7 @@
           "type": "string"
         },
         "sourceSubscriptionId": {
+          "format": "uuid",
           "type": "string"
         },
         "sourceResourceGroupName": {
@@ -2439,79 +2094,6 @@
           "additionalProperties": {
             "type": "string"
           }
-        }
-      }
-    },
-    "OperationListResult": {
-      "description": "Result of the request to list SQL operations.",
-      "type": "object",
-      "properties": {
-        "value": {
-          "type": "array",
-          "x-ms-identifiers": [],
-          "items": {
-            "$ref": "#/definitions/Operation"
-          },
-          "readOnly": true
-        },
-        "nextLink": {
-          "type": "string",
-          "readOnly": true
-        }
-      }
-    },
-    "Operation": {
-      "description": "SQL REST API operation definition.",
-      "type": "object",
-      "properties": {
-        "name": {
-          "type": "string",
-          "readOnly": true
-        },
-        "display": {
-          "$ref": "#/definitions/OperationDisplay",
-          "readOnly": true
-        },
-        "origin": {
-          "enum": [
-            "user",
-            "system"
-          ],
-          "type": "string",
-          "readOnly": true,
-          "x-ms-enum": {
-            "name": "OperationOrigin",
-            "modelAsString": true
-          }
-        },
-        "properties": {
-          "type": "object",
-          "additionalProperties": {
-            "type": "object"
-          },
-          "readOnly": true
-        }
-      }
-    },
-    "OperationDisplay": {
-      "description": "Display metadata associated with the operation.",
-      "type": "object",
-      "properties": {
-        "provider": {
-          "type": "string",
-          "readOnly": true
-        },
-        "resource": {
-          "type": "string",
-          "readOnly": true
-        },
-        "operation": {
-          "type": "string",
-          "readOnly": true
-        },
-        "description": {
-          "type": "string",
-          "readOnly": true
         }
       }
     }
@@ -2539,6 +2121,60 @@
       "description": "Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.",
       "required": true,
       "type": "string",
+      "x-ms-parameter-location": "method"
+    },
+    "FleetNameParameter": {
+      "name": "fleetName",
+      "in": "path",
+      "description": "Name of the database fleet.",
+      "required": true,
+      "type": "string",
+      "pattern": "^.+$",
+      "x-ms-parameter-location": "method"
+    },
+    "FleetspaceNameParameter": {
+      "name": "fleetspaceName",
+      "in": "path",
+      "description": "Name of the fleetspace.",
+      "required": true,
+      "type": "string",
+      "pattern": "^.+$",
+      "x-ms-parameter-location": "method"
+    },
+    "TierNameParameter": {
+      "name": "tierName",
+      "in": "path",
+      "description": "Name of the tier.",
+      "required": true,
+      "type": "string",
+      "pattern": "^.+$",
+      "x-ms-parameter-location": "method"
+    },
+    "AuthorizedPrincipalNameParameter": {
+      "name": "authorizedPrincipalName",
+      "in": "path",
+      "description": "Name of the authorized principal.",
+      "required": true,
+      "type": "string",
+      "pattern": "^.+$",
+      "x-ms-parameter-location": "method"
+    },
+    "FirewallRuleNameParameter": {
+      "name": "firewallRuleName",
+      "in": "path",
+      "description": "Name of the firewall rule.",
+      "required": true,
+      "type": "string",
+      "pattern": "^.+$",
+      "x-ms-parameter-location": "method"
+    },
+    "DatabaseNameParameter": {
+      "name": "databaseName",
+      "in": "path",
+      "description": "Name of the database.",
+      "required": true,
+      "type": "string",
+      "pattern": "^.+$",
       "x-ms-parameter-location": "method"
     }
   },

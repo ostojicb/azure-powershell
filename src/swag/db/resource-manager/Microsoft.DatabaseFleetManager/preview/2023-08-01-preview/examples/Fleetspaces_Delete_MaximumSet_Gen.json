@@ -1,9 +1,11 @@
 {
+  "title": "Fleetspaces_Delete",
+  "operationId": "Fleetspaces_Delete",
   "parameters": {
     "resourceGroupName": "rgdb",
-    "fleetName": "35xj-w4-5-4-320",
-    "fleetspaceName": "cs-kcp6jx-3sk3h2-xb-1-6742-dq-21h13",
-    "subscriptionId": "nlyen",
+    "fleetName": "myfleet",
+    "fleetspaceName": "myfleetspace",
+    "subscriptionId": "CB5ADA7A-11BD-4423-80A6-B579D9E9586D",
     "api-version": "2023-08-01-preview"
   },
   "responses": {
